@@ -6,11 +6,6 @@ import pymongo
 MONGO_URI = 'mongodb://localhost:27017/'
 db_client = pymongo.MongoClient(MONGO_URI)
 
-# mongo_uri = "mongodb+srv://taskapp-east.i78of.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority"
-
-# db_client = pymongo.MongoClient(mongo_uri,
-#                      tls=True,
-#                      tlsCertificateKeyFile='X509-cert-7664155573852480772.pem')
 
 db = db_client["ClanEvent"]
 master_coll = db["MASTER"]
