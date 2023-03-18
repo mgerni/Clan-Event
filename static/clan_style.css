@@ -1,0 +1,279 @@
+body{
+    /* padding: 10px; */
+    margin: 0;
+    /* box-sizing: border-box; */
+    /* display: flex; */
+    /* gap: 10px; */
+    /* min-height: 100vh; */
+    background-color: rgb(75,65,55);
+}
+
+.board {
+    padding: 10px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(18, 1rem);
+    grid-gap: 5px;
+    justify-content: center;
+}
+
+.team-row {
+    padding-top: 10px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-container { 
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (min-width: 950px) {
+    .board {
+        grid-template-columns: repeat(18, 65px);
+
+    }
+    .team-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-container {
+        grid-template-columns: 5% 50%;
+        grid-gap: 20em;
+    }
+}
+
+
+.board > .card {
+    aspect-ratio: 1 / 1;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 30px 25px 25px; */
+}
+
+
+.team {
+    padding-top: 3px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+    row-gap: 5px;
+    align-content: center;
+    align-items: center;
+}
+
+.board > .card:hover {
+    animation-name: card-hover;
+    animation-delay: .5s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+@keyframes card-hover {
+    0% {transform: scale(1)}
+    33% {transform: scale(.75)}
+    66% {transform: scale(1);}
+}
+
+.minigame-tile {
+    background-color:  rgba(209, 209, 19, 0.781);
+    background-image: url("event/minigames-tile.png");
+    background-size: cover;
+
+}
+
+.showButton:hover {
+    cursor: pointer;
+}
+
+.raids-tile {
+    background-color: rgba(128, 0, 128, 0.705);
+    background-image: url("event/raids-tile2.png");
+    background-size: cover;
+}
+
+.slayer-boss-tile {
+    background-color: rgba(255, 94, 0, 0.788);
+    background-image: url("event/slayer-boss-tile.png");
+    background-size: cover;
+}
+
+.slayer-monsters-tile {
+    background-color: rgba(7, 10, 189, 0.788);
+    background-image: url("event/slayer-monsters-tile.png");
+    background-size: cover;
+}
+
+.monster-mash-tile {
+    background-color: rgb(8, 226, 8);
+    background-image: url("event/monster-mash-tile.png");
+    background-size: cover;
+}
+
+.wilderness-tile {
+    background-color: rgba(219, 36, 36, 0.801);
+    background-image: url("event/wilderness-tile.png");
+    background-size: cover;
+}
+
+.clues-tile {
+    background-color: rgba(7, 235, 235, 0.589);
+    background-image: url("event/clues-tile.png");
+    background-size: cover;
+}
+
+.godwars-tile {
+    background-color: rgba(7, 151, 108, 0.589);
+    background-image: url("event/godwars-tile.png");
+    background-size: cover;
+}
+
+
+.misc-boss-tile {
+    background-color: rgba(236, 175, 96, 0.329);
+    background-image: url("event/misc-boss-tile.png");
+    background-size: cover;
+}
+.myModal {
+ display: none;
+ z-index: 1;
+ top: 10rem;
+ bottom: 0;
+ border: none;
+ background-color: rgb(75,65,55);
+ box-shadow: 30px 25px 25px;
+}
+
+.tbd {
+    background-color: black;
+}
+.test {
+    z-index: 10;
+    padding: 3px;
+    text-align: center;
+}
+
+.button-70 {
+  background-image: linear-gradient(#da5757a9, #eb0404b7);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: rsText , sans-serif;
+  font-size: .9em;
+  margin: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+@font-face {
+    font-family: rsText;
+    src: url('RuneScape-UF.woff2') format('woff2'),
+        url('RuneScape-UF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+  
+
+.rsText {
+    color: #ffff00;
+    font-size: 1.2rem !important;
+    font-family: rsText;
+}
+
+
+svg {
+    z-index: -10;
+}
+
+
+.team-1-color {
+    color: #7348f7 !important;
+}
+.team-2-color {
+    color: #58040f;
+}
+.team-3-color {
+    color: #e85254;
+}
+.team-4-color {
+    color: #18a78a;
+}
+.team-5-color {
+    color: #59c32e;
+}
+.team-6-color {
+    color: #949ef6;
+}
+.team-7-color {
+    color: #8b1674;
+}
+.team-8-color {
+    color: #994d06;
+}
+.team-9-color {
+    color: #66c9ed;
+}
+.team-10-color {
+    color: #bbebbf;
+}
+.team-11-color {
+    color: #df842d;
+}
+.team-12-color {
+    color: #fd19cb;
+}
+.team-13-color {
+    color: #1c0e32;
+}
+.team-14-color {
+    color: #4262a0;
+}
+.team-15-color {
+    color: #908c60;
+}
+
+
+.body-center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3px;
+}
+
+.login-button {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    
+}
+

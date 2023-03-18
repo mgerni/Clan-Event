@@ -1,0 +1,28 @@
+{% extends "base_clan_event.html" %}
+
+{% block title %}
+Clan Event - Admin Login
+{% endblock %}
+
+{% block context %}
+
+<body class="body-center">
+    <div class="rsText">
+        <h1 class="title">Clan event admin</h1>
+    
+        <form class="login-form" method="POST">
+            <label class="" for="username">Username</label>
+            <input class="" type="username" name="username" id="username" placeholder="username">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="************">
+
+            <button class="login-button">Login</button>
+        </form>
+    </div>
+</body>
+
+
+
+
+{% endblock %}

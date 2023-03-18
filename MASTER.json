@@ -1,0 +1,2519 @@
+[{
+  "_id": {
+    "$oid": "641509cb370a16fab90d3d77"
+  },
+  "Name": "MASTER",
+  "current_tile": 215,
+  "coin_multiplier": 1,
+  "traveled_tiles": 0,
+  "members": [],
+  "task_history": [],
+  "Skilling Minigames": [
+    {
+      "_id": 0,
+      "source": "Guardians of the rift",
+      "task": "Abyssal lantern",
+      "rate": 28,
+      "divisor": 4,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Guardians of the rift",
+      "task": "Green dye",
+      "rate": 48,
+      "divisor": 4,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Guardians of the rift",
+      "task": "Blue dye",
+      "rate": 48,
+      "divisor": 4,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Guardians of the rift",
+      "task": "Red dye",
+      "rate": 48,
+      "divisor": 4,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Guardians of the rift",
+      "task": "Abyssal protector",
+      "rate": 160,
+      "divisor": 1,
+      "coins": 160,
+      "coinvalue": 160,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Wintertodt",
+      "task": "4 Pyromancer pieces",
+      "rate": 12,
+      "divisor": 2,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Wintertodt",
+      "task": "Tome of fire",
+      "rate": 20,
+      "divisor": 2,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Wintertodt",
+      "task": "Phoenix",
+      "rate": 100,
+      "divisor": 1,
+      "coins": 100,
+      "coinvalue": 100,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Wintertodt",
+      "task": "Dragon axe(Wintertodt)",
+      "rate": 200,
+      "divisor": 1,
+      "coins": 200,
+      "coinvalue": 200,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Tempoross",
+      "task": "Big harpoonfish",
+      "rate": 32,
+      "divisor": 2,
+      "coins": 16,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Tempoross",
+      "task": "Tome of water",
+      "rate": 32,
+      "divisor": 2,
+      "coins": 16,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Tempoross",
+      "task": "Tiny tempor",
+      "rate": 160,
+      "divisor": 1,
+      "coins": 160,
+      "coinvalue": 160,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Tempoross",
+      "task": "Dragon harpoon(Tempoross)",
+      "rate": 160,
+      "divisor": 1,
+      "coins": 160,
+      "coinvalue": 160,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Agility sepulchre",
+      "task": "Strange old lockpick",
+      "rate": 8,
+      "divisor": 1,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Agility sepulchre",
+      "task": "Ring of endurance",
+      "rate": 30,
+      "divisor": 1,
+      "coins": 30,
+      "coinvalue": 30,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Zalcano",
+      "task": "Crystal tool seed",
+      "rate": 50,
+      "divisor": 2,
+      "coins": 25,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Zalcano",
+      "task": "Zalcano shard",
+      "rate": 60,
+      "divisor": 2,
+      "coins": 30,
+      "coinvalue": 30,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Zalcano",
+      "task": "Smolcano",
+      "rate": 110,
+      "divisor": 1,
+      "coins": 110,
+      "coinvalue": 110,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Volcanic Mine",
+      "task": "Dragon Pickaxe(broken)",
+      "rate": 25,
+      "divisor": 1,
+      "coins": 25,
+      "coinvalue": 25,
+      "completed": false
+    }
+  ],
+  "Raids": [
+    {
+      "_id": 0,
+      "source": "Chambers of Xeric",
+      "task": "Arcane prayer scroll",
+      "rate": 55,
+      "divisor": 3.5,
+      "coins": 16,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Chambers of Xeric",
+      "task": "Dexterous prayer scroll",
+      "rate": 55,
+      "divisor": 3.5,
+      "coins": 16,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Chambers of Xeric",
+      "task": "Twister buckler",
+      "rate": 270,
+      "divisor": 3.5,
+      "coins": 77,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Chambers of Xeric",
+      "task": "Dragon hunter crossbow",
+      "rate": 270,
+      "divisor": 3.5,
+      "coins": 77,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Chambers of Xeric",
+      "task": "Dinh's bulwark",
+      "rate": 363,
+      "divisor": 3.5,
+      "coins": 104,
+      "coinvalue": 105,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Chambers of Xeric",
+      "task": "Dragon claws",
+      "rate": 363,
+      "divisor": 3.5,
+      "coins": 104,
+      "coinvalue": 105,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Chambers of Xeric",
+      "task": "Ancestral hat",
+      "rate": 363,
+      "divisor": 3.5,
+      "coins": 104,
+      "coinvalue": 105,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Chambers of Xeric",
+      "task": "Ancestral robe top",
+      "rate": 363,
+      "divisor": 3.5,
+      "coins": 104,
+      "coinvalue": 105,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Chambers of Xeric",
+      "task": "Ancestral robe bottom",
+      "rate": 363,
+      "divisor": 3.5,
+      "coins": 104,
+      "coinvalue": 105,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Chambers of Xeric",
+      "task": "Elder maul",
+      "rate": 544,
+      "divisor": 3.5,
+      "coins": 155,
+      "coinvalue": 155,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Chambers of Xeric",
+      "task": "Kodai insignia",
+      "rate": 544,
+      "divisor": 3.5,
+      "coins": 155,
+      "coinvalue": 155,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Chambers of Xeric",
+      "task": "Twisted bow",
+      "rate": 544,
+      "divisor": 3.5,
+      "coins": 155,
+      "coinvalue": 155,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Chambers of Xeric",
+      "task": "Olmlet",
+      "rate": 836,
+      "divisor": 3.5,
+      "coins": 239,
+      "coinvalue": 240,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Theatre of Blood",
+      "task": "Avernic defender hilt",
+      "rate": 43,
+      "divisor": 2,
+      "coins": 22,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Theatre of Blood",
+      "task": "Ghrazi rapier",
+      "rate": 172,
+      "divisor": 2,
+      "coins": 86,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Theatre of Blood",
+      "task": "Sanguinesti staff",
+      "rate": 172,
+      "divisor": 2,
+      "coins": 86,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Theatre of Blood",
+      "task": "Justiciar faceguard",
+      "rate": 172,
+      "divisor": 2,
+      "coins": 86,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Theatre of Blood",
+      "task": "Justiciar chestguard",
+      "rate": 172,
+      "divisor": 2,
+      "coins": 86,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Theatre of Blood",
+      "task": "Justiciar legguards",
+      "rate": 172,
+      "divisor": 2,
+      "coins": 86,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Theatre of Blood",
+      "task": "Scythe of vitur",
+      "rate": 344,
+      "divisor": 2,
+      "coins": 172,
+      "coinvalue": 175,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Theatre of Blood",
+      "task": "Lil'zik",
+      "rate": 325,
+      "divisor": 1,
+      "coins": 325,
+      "coinvalue": 325,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Tombs of Amascut",
+      "task": "Osmumten's fang",
+      "rate": 39,
+      "divisor": 2,
+      "coins": 20,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Tombs of Amascut",
+      "task": "Lightbearer",
+      "rate": 39,
+      "divisor": 2,
+      "coins": 20,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Tombs of Amascut",
+      "task": "Elidinis' ward",
+      "rate": 90,
+      "divisor": 2,
+      "coins": 45,
+      "coinvalue": 45,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Tombs of Amascut",
+      "task": "Masori mask",
+      "rate": 135,
+      "divisor": 2,
+      "coins": 68,
+      "coinvalue": 70,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Tombs of Amascut",
+      "task": "Masori body",
+      "rate": 135,
+      "divisor": 2,
+      "coins": 68,
+      "coinvalue": 70,
+      "completed": false
+    },
+    {
+      "_id": 26,
+      "source": "Tombs of Amascut",
+      "task": "Masory chaps",
+      "rate": 135,
+      "divisor": 2,
+      "coins": 68,
+      "coinvalue": 70,
+      "completed": false
+    },
+    {
+      "_id": 27,
+      "source": "Tombs of Amascut",
+      "task": "Tumeken's shadow",
+      "rate": 270,
+      "divisor": 2,
+      "coins": 135,
+      "coinvalue": 135,
+      "completed": false
+    },
+    {
+      "_id": 28,
+      "source": "Tombs of Amascut",
+      "task": "Tumeken's guardian",
+      "rate": 500,
+      "divisor": 1,
+      "coins": 500,
+      "coinvalue": 500,
+      "completed": false
+    }
+  ],
+  "Slayer bosses": [
+    {
+      "_id": 0,
+      "source": "Grotesque Guardians",
+      "task": "Granite hammer",
+      "rate": 19,
+      "divisor": 2,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Grotesque Guardians",
+      "task": "Black tournaline core",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Grotesque Guardians",
+      "task": "Noon",
+      "rate": 150,
+      "divisor": 1,
+      "coins": 150,
+      "coinvalue": 150,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Grotesque Guardians",
+      "task": "Jar of stone",
+      "rate": 250,
+      "divisor": 1,
+      "coins": 250,
+      "coinvalue": 250,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Abyssal Sire",
+      "task": "Abyssal dagger",
+      "rate": 25,
+      "divisor": 5,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Abyssal Sire",
+      "task": "Total of 3 bludgeon pieces",
+      "rate": 31,
+      "divisor": 5,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Abyssal Sire",
+      "task": "Jar of miasma",
+      "rate": 49,
+      "divisor": 5,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Abyssal Sire",
+      "task": "Abyssal whip(from Unsired)",
+      "rate": 53,
+      "divisor": 5,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Abyssal Sire",
+      "task": "Abyssal head(from Unsired)",
+      "rate": 64,
+      "divisor": 5,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Abyssal Sire",
+      "task": "Abyssal orphan",
+      "rate": 128,
+      "divisor": 1,
+      "coins": 128,
+      "coinvalue": 130,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Kraken",
+      "task": "Kraken tentacle",
+      "rate": 7,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Kraken",
+      "task": "Trident of the seas (full)",
+      "rate": 9,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Kraken",
+      "task": "Jar of dirt",
+      "rate": 17,
+      "divisor": 3,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Kraken",
+      "task": "Pet kraken",
+      "rate": 50,
+      "divisor": 1,
+      "coins": 50,
+      "coinvalue": 50,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Cerberus",
+      "task": "Primordial crystal",
+      "rate": 13,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Cerberus",
+      "task": "Pegasian crystal",
+      "rate": 13,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Cerberus",
+      "task": "Eternal crystal",
+      "rate": 13,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Cerberus",
+      "task": "Smouldering stone(from Cerberus)",
+      "rate": 13,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Cerberus",
+      "task": "Jar of souls",
+      "rate": 50,
+      "divisor": 1,
+      "coins": 50,
+      "coinvalue": 50,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Cerberus",
+      "task": "Hellpuppy",
+      "rate": 75,
+      "divisor": 1,
+      "coins": 75,
+      "coinvalue": 75,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Thermonuclear Smoke Devil",
+      "task": "Occult necklace(from boss)",
+      "rate": 6,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Thermonuclear Smoke Devil",
+      "task": "Smoke Battlestaff",
+      "rate": 9,
+      "divisor": 2,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Thermonuclear Smoke Devil",
+      "task": "Jar of smoke",
+      "rate": 33,
+      "divisor": 1,
+      "coins": 33,
+      "coinvalue": 35,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Thermonuclear Smoke Devil",
+      "task": "Pet smoke devil",
+      "rate": 50,
+      "divisor": 1,
+      "coins": 50,
+      "coinvalue": 50,
+      "completed": false
+    }
+  ],
+  "Slayer uniques": [
+    {
+      "_id": 0,
+      "source": "Basilisks",
+      "task": "Basilisk head",
+      "rate": 6,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Basilisks",
+      "task": "Basilisk jaw",
+      "rate": 50,
+      "divisor": 2,
+      "coins": 25,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Kurasks",
+      "task": "Kurask head",
+      "rate": 17,
+      "divisor": 2,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Kurasks",
+      "task": "Leaf-bladed battleaxe",
+      "rate": 6,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Abyssal Demons",
+      "task": "Abyssal head(from Abyssal demons)",
+      "rate": 12,
+      "divisor": 1,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Superiors",
+      "task": "Imbued heart",
+      "rate": 100,
+      "divisor": 1,
+      "coins": 100,
+      "coinvalue": 100,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Superiors",
+      "task": "Eternal gem",
+      "rate": 100,
+      "divisor": 1,
+      "coins": 100,
+      "coinvalue": 100,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Superiors",
+      "task": "Mist battlestaff",
+      "rate": 16,
+      "divisor": 1,
+      "coins": 16,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Superiors",
+      "task": "Dust battlestaff",
+      "rate": 7,
+      "divisor": 1,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Fossil island wyverns",
+      "task": "Granite longsword",
+      "rate": 5,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Fossil Island wyverns",
+      "task": "Granite boots",
+      "rate": 10,
+      "divisor": 2,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Fossil Island wyverns",
+      "task": "Wyvern visage",
+      "rate": 100,
+      "divisor": 1,
+      "coins": 100,
+      "coinvalue": 100,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Skeletal wyverns",
+      "task": "Granite legs",
+      "rate": 6,
+      "divisor": 1,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Dragons and wyverns",
+      "task": "Draconic visage",
+      "rate": 85,
+      "divisor": 1,
+      "coins": 85,
+      "coinvalue": 85,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Dark beasts",
+      "task": "Dark bow",
+      "rate": 6,
+      "divisor": 1,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Vyrewatch",
+      "task": "Blood shard(thieve or drop)",
+      "rate": 7,
+      "divisor": 1,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Mount Karuulm",
+      "task": "Dragon sword",
+      "rate": 33,
+      "divisor": 2,
+      "coins": 17,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Mount Karuulm",
+      "task": "Dragon harpoon(Wyrms)",
+      "rate": 33,
+      "divisor": 2,
+      "coins": 17,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Mount Karuulm",
+      "task": "Drake's tooth",
+      "rate": 17,
+      "divisor": 2,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Mount Karuulm",
+      "task": "Drake's claw",
+      "rate": 17,
+      "divisor": 2,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Alchemical hydra",
+      "task": "Any ring piece",
+      "rate": 8,
+      "divisor": 4,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Alchemical hydra",
+      "task": "Hydra tail",
+      "rate": 21,
+      "divisor": 4,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Alchemical hydra",
+      "task": "Hydra leather",
+      "rate": 21,
+      "divisor": 4,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Alchemical hydra",
+      "task": "Hydra's claw",
+      "rate": 42,
+      "divisor": 4,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Alchemical hydra",
+      "task": "Jar of chemicals",
+      "rate": 83,
+      "divisor": 1,
+      "coins": 83,
+      "coinvalue": 85,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Alchemical hydra",
+      "task": "Ikkle hydra",
+      "rate": 125,
+      "divisor": 1,
+      "coins": 125,
+      "coinvalue": 125,
+      "completed": false
+    },
+    {
+      "_id": 26,
+      "source": "Full sets",
+      "task": "Full dark mystic set",
+      "rate": 12,
+      "divisor": 1,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 27,
+      "source": "Full sets",
+      "task": "Full light mystic set",
+      "rate": 12,
+      "divisor": 1,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 28,
+      "source": "Full sets",
+      "task": "Full metal boots set(bronze to dragon)",
+      "rate": 6,
+      "divisor": 1,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    }
+  ],
+  "Monster mash": [
+    {
+      "_id": 0,
+      "source": "Tzhaar",
+      "task": "Obsidian helmet",
+      "rate": 8,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Tzhaar",
+      "task": "Obsidian platebody",
+      "rate": 8,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Tzhaar",
+      "task": "Obsidian platelegs",
+      "rate": 8,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Tzhaar",
+      "task": "Toktz-mej-tal",
+      "rate": 40,
+      "divisor": 1,
+      "coins": 40,
+      "coinvalue": 40,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Demonic gorillas",
+      "task": "Zenyte shard",
+      "rate": 7,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Demonic gorillas",
+      "task": "Ballista limbs",
+      "rate": 12,
+      "divisor": 3,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Demonic gorillas",
+      "task": "Ballista spring",
+      "rate": 12,
+      "divisor": 3,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Demonic gorillas",
+      "task": "Light frame",
+      "rate": 19,
+      "divisor": 3,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Demonic gorillas",
+      "task": "Heavy frame",
+      "rate": 37,
+      "divisor": 3,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Demonic gorillas",
+      "task": "Monkey tail",
+      "rate": 37,
+      "divisor": 3,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Stronghold of security",
+      "task": "Full skull sceptre",
+      "rate": 37,
+      "divisor": 1,
+      "coins": 37,
+      "coinvalue": 40,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Ogresses",
+      "task": "Shaman mask",
+      "rate": 5,
+      "divisor": 1,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Undead druids",
+      "task": "Mask of Ranul",
+      "rate": 10,
+      "divisor": 1,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Metallic dragons",
+      "task": "Dragon limbs",
+      "rate": 18,
+      "divisor": 1,
+      "coins": 18,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Adamant dragons",
+      "task": "Dragon metal slice",
+      "rate": 100,
+      "divisor": 1,
+      "coins": 100,
+      "coinvalue": 100,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Rune dragons",
+      "task": "Dragon metal lump",
+      "rate": 111,
+      "divisor": 1,
+      "coins": 111,
+      "coinvalue": 115,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Champion Scrolls",
+      "task": "Goblin champion scroll",
+      "rate": 5,
+      "divisor": 1,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Champion Scrolls",
+      "task": "Imp champion scroll",
+      "rate": 10,
+      "divisor": 1,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Champion Scrolls",
+      "task": "Skeleton champion scroll",
+      "rate": 10,
+      "divisor": 1,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Champion Scrolls",
+      "task": "Zombie champion scroll",
+      "rate": 8,
+      "divisor": 1,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Champion Scrolls",
+      "task": "Giant champion scroll",
+      "rate": 7,
+      "divisor": 1,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Champion Scrolls",
+      "task": "Hobgoblin champion scroll",
+      "rate": 7,
+      "divisor": 1,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Champion Scrolls",
+      "task": "Ghoul champion scroll",
+      "rate": 9,
+      "divisor": 1,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Champion Scrolls",
+      "task": "Earth warrior champion scroll",
+      "rate": 10,
+      "divisor": 1,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Champion Scrolls",
+      "task": "Jogre champion scroll",
+      "rate": 12,
+      "divisor": 1,
+      "coins": 12,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Champion Scrolls",
+      "task": "Lesser demon champion scroll",
+      "rate": 15,
+      "divisor": 1,
+      "coins": 15,
+      "coinvalue": 15,
+      "completed": false
+    }
+  ],
+  "Wilderness": [
+    {
+      "_id": 0,
+      "source": "Elder chaos druids",
+      "task": "Elder chaos hood",
+      "rate": 5,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Elder chaos druids",
+      "task": "Elder chaos top",
+      "rate": 5,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Elder chaos druids",
+      "task": "Elder chaos robe",
+      "rate": 5,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Revenants",
+      "task": "Ancient crystal",
+      "rate": 13,
+      "divisor": 5,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Revenants",
+      "task": "Ancient statuette",
+      "rate": 20,
+      "divisor": 5,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Revenants",
+      "task": "Ancient medellion",
+      "rate": 40,
+      "divisor": 5,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Revenants",
+      "task": "Ancient effigy",
+      "rate": 40,
+      "divisor": 5,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Revenants",
+      "task": "Ancient relic",
+      "rate": 40,
+      "divisor": 5,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Revenants",
+      "task": "Amulet of avarice",
+      "rate": 21,
+      "divisor": 5,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Revenants",
+      "task": "Craw's bow",
+      "rate": 45,
+      "divisor": 4,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Revenants",
+      "task": "Thammaron's sceptre",
+      "rate": 45,
+      "divisor": 4,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Revenants",
+      "task": "Viggora's chainmace",
+      "rate": 45,
+      "divisor": 4,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Wilderness bosses",
+      "task": "Dragon pickaxe(from wilderness)",
+      "rate": 9,
+      "divisor": 4,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Venenatis/Spindel",
+      "task": "Fangs of Venenatis",
+      "rate": 15,
+      "divisor": 3,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Venenatis/Spindel",
+      "task": "Treasonous ring",
+      "rate": 18,
+      "divisor": 3,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Venenatis/Spindel",
+      "task": "Voidwaker gem",
+      "rate": 23,
+      "divisor": 3,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Venenatis/Spindel",
+      "task": "Venenatis spiderling",
+      "rate": 70,
+      "divisor": 1,
+      "coins": 70,
+      "coinvalue": 70,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Callisto/Artio",
+      "task": "Claws of Callisto",
+      "rate": 17,
+      "divisor": 3,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Callisto/Artio",
+      "task": "Tyrannical ring",
+      "rate": 20,
+      "divisor": 3,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Callisto/Artio",
+      "task": "Voidwaker hilt",
+      "rate": 26,
+      "divisor": 3,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Callisto/Artio",
+      "task": "Callisto cub",
+      "rate": 80,
+      "divisor": 1,
+      "coins": 80,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Vet'ion/Calvar'ion",
+      "task": "Skull of Vet'ion",
+      "rate": 15,
+      "divisor": 3,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Vet'ion/Calvar'ion",
+      "task": "Ring of the gods",
+      "rate": 18,
+      "divisor": 3,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Vet'ion/Calvar'ion",
+      "task": "Voidwaker blade",
+      "rate": 23,
+      "divisor": 3,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Vet'ion/Calvar'ion",
+      "task": "Vet'ion jr",
+      "rate": 70,
+      "divisor": 1,
+      "coins": 70,
+      "coinvalue": 70,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Corporeal beast",
+      "task": "Spirit shield",
+      "rate": 11,
+      "divisor": 3,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 26,
+      "source": "Corporeal beast",
+      "task": "Holy elixir",
+      "rate": 39,
+      "divisor": 3,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 27,
+      "source": "Corporeal beast",
+      "task": "Arcane sigil",
+      "rate": 227,
+      "divisor": 3,
+      "coins": 76,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 28,
+      "source": "Corporeal beast",
+      "task": "Spectral sigil",
+      "rate": 227,
+      "divisor": 3,
+      "coins": 76,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 29,
+      "source": "Corporeal beast",
+      "task": "Elysian sigil",
+      "rate": 862,
+      "divisor": 3,
+      "coins": 287,
+      "coinvalue": 290,
+      "completed": false
+    },
+    {
+      "_id": 30,
+      "source": "Corporeal beast",
+      "task": "Jar of spirits",
+      "rate": 167,
+      "divisor": 3,
+      "coins": 56,
+      "coinvalue": 60,
+      "completed": false
+    },
+    {
+      "_id": 31,
+      "source": "Corporeal beast",
+      "task": "Pet dark core",
+      "rate": 833,
+      "divisor": 3,
+      "coins": 278,
+      "coinvalue": 280,
+      "completed": false
+    },
+    {
+      "_id": 32,
+      "source": "Crazy archeologist",
+      "task": "Odium and Malediction shards 2",
+      "rate": 9,
+      "divisor": 1,
+      "coins": 9,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 33,
+      "source": "Chaos fanatic",
+      "task": "Odium and Malediction shards 1",
+      "rate": 11,
+      "divisor": 1,
+      "coins": 11,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 34,
+      "source": "Scorpia",
+      "task": "Odium and Malediction shards 3",
+      "rate": 6,
+      "divisor": 1,
+      "coins": 6,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 35,
+      "source": "Scorpia",
+      "task": "Scorpia's offspring",
+      "rate": 50,
+      "divisor": 1,
+      "coins": 50,
+      "coinvalue": 50,
+      "completed": false
+    }
+  ],
+  "Clues": [
+    {
+      "_id": 0,
+      "source": "Beginner clue steps",
+      "task": "Talk to Hans (Always walking around...)",
+      "rate": 2,
+      "divisor": 1,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Easy clue steps",
+      "task": "Speak to Hans to solve the clue",
+      "rate": 6,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Easy clue steps",
+      "task": "Talk to the Doomsayer",
+      "rate": 6,
+      "divisor": 2,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Medium clue steps",
+      "task": "Snah (Hans)",
+      "rate": 10,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Medium clue steps",
+      "task": "Ok Co (Cook)",
+      "rate": 10,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Medium clue steps",
+      "task": "Area Chef Trek (Father Aereck)",
+      "rate": 10,
+      "divisor": 3,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Hard clue steps",
+      "task": "Blue Grim Guided (Lumbridge Guide)",
+      "rate": 10,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Hard clue steps",
+      "task": "Do Say More (Doomsayer)",
+      "rate": 10,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Hard clue steps",
+      "task": "Talk to Hans (Snah? I feel all confused...)",
+      "rate": 10,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Hard clue steps",
+      "task": "You will need to under-cook to solve this one",
+      "rate": 10,
+      "divisor": 4,
+      "coins": 3,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Elite clue steps",
+      "task": "Kill a hellhound (A demon's best friend...)",
+      "rate": 35,
+      "divisor": 5,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "Elite clue steps",
+      "task": "Kill an ankou (Ghostly bones)",
+      "rate": 35,
+      "divisor": 5,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Elite clue steps",
+      "task": "Kill a bloodveld (You'll get licked)",
+      "rate": 35,
+      "divisor": 5,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Elite clue steps",
+      "task": "Kill an aberrant spectre (You'll have to plug...)",
+      "rate": 35,
+      "divisor": 5,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Elite clue steps",
+      "task": "Kill a rock crab (You might have to turn over...)",
+      "rate": 35,
+      "divisor": 5,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    }
+  ],
+  "God Wars dungeon": [
+    {
+      "_id": 0,
+      "source": "Godsword blade",
+      "task": "Get a full godsword blade",
+      "rate": 25,
+      "divisor": 1,
+      "coins": 25,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "General Graardor",
+      "task": "Bandos boots",
+      "rate": 19,
+      "divisor": 2,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "General Graardor",
+      "task": "Bandos tassets",
+      "rate": 19,
+      "divisor": 2,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "General Graardor",
+      "task": "Bandos chestplate",
+      "rate": 19,
+      "divisor": 2,
+      "coins": 10,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "General Graardor",
+      "task": "Bandos hilt",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "General Graardor",
+      "task": "Pet general graardor",
+      "rate": 250,
+      "divisor": 1,
+      "coins": 250,
+      "coinvalue": 250,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Commander Zilyana",
+      "task": "Saradomin sword",
+      "rate": 7,
+      "divisor": 2,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Commander Zilyana",
+      "task": "Saradomin's light",
+      "rate": 13,
+      "divisor": 2,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "Commander Zilyana",
+      "task": "Armadyl crossbow",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "Commander Zilyana",
+      "task": "Saradomin hilt",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "Commander Zilyana",
+      "task": "Pet zilyana",
+      "rate": 250,
+      "divisor": 1,
+      "coins": 250,
+      "coinvalue": 250,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "K'ril Tsutsaroth",
+      "task": "Steam battlestaff",
+      "rate": 9,
+      "divisor": 2,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "K'ril Tsutsaroth",
+      "task": "Zamorakian spear",
+      "rate": 15,
+      "divisor": 2,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "K'ril Tsutsaroth",
+      "task": "Staff of the dead",
+      "rate": 30,
+      "divisor": 2,
+      "coins": 15,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "K'ril Tsutsaroth",
+      "task": "Zamorak hilt",
+      "rate": 30,
+      "divisor": 2,
+      "coins": 15,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "K'ril Tsutsaroth",
+      "task": "Pet k'ril tsutsaroth",
+      "rate": 300,
+      "divisor": 1,
+      "coins": 300,
+      "coinvalue": 300,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Kree'arra",
+      "task": "Armadyl helmet",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Kree'arra",
+      "task": "Armadyl chestplate",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Kree'arra",
+      "task": "Armadyl chainskirt",
+      "rate": 25,
+      "divisor": 2,
+      "coins": 13,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Kree'arra",
+      "task": "Armadyl hilt",
+      "rate": 34,
+      "divisor": 2,
+      "coins": 17,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Kree'arra",
+      "task": "Pet kree'arra",
+      "rate": 330,
+      "divisor": 1,
+      "coins": 330,
+      "coinvalue": 330,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Nex",
+      "task": "Zaryte vambraces",
+      "rate": 86,
+      "divisor": 4,
+      "coins": 22,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Nex",
+      "task": "Nihil horn",
+      "rate": 129,
+      "divisor": 4,
+      "coins": 32,
+      "coinvalue": 35,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Nex",
+      "task": "Torva full helm",
+      "rate": 129,
+      "divisor": 4,
+      "coins": 32,
+      "coinvalue": 35,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Nex",
+      "task": "Torva platebody",
+      "rate": 129,
+      "divisor": 4,
+      "coins": 32,
+      "coinvalue": 35,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Nex",
+      "task": "Torva platelegs",
+      "rate": 129,
+      "divisor": 4,
+      "coins": 32,
+      "coinvalue": 35,
+      "completed": false
+    },
+    {
+      "_id": 26,
+      "source": "Nex",
+      "task": "Ancient hilt",
+      "rate": 258,
+      "divisor": 4,
+      "coins": 65,
+      "coinvalue": 65,
+      "completed": false
+    },
+    {
+      "_id": 27,
+      "source": "Nex",
+      "task": "Nexling",
+      "rate": 250,
+      "divisor": 1,
+      "coins": 250,
+      "coinvalue": 250,
+      "completed": false
+    }
+  ],
+  "Various bosses": [
+    {
+      "_id": 0,
+      "source": "Barrows chests",
+      "task": "Full barrows set",
+      "rate": 20,
+      "divisor": 1,
+      "coins": 20,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 1,
+      "source": "Dagannoth kings",
+      "task": "Berserker ring",
+      "rate": 6,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 2,
+      "source": "Dagannoth kings",
+      "task": "Warrior's ring",
+      "rate": 6,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 3,
+      "source": "Dagannoth kings",
+      "task": "Seers ring",
+      "rate": 6,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 4,
+      "source": "Dagannoth kings",
+      "task": "Archers ring",
+      "rate": 6,
+      "divisor": 3,
+      "coins": 2,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 5,
+      "source": "Dagannoth kings",
+      "task": "Pet dagganoth prime",
+      "rate": 166,
+      "divisor": 3,
+      "coins": 55,
+      "coinvalue": 55,
+      "completed": false
+    },
+    {
+      "_id": 6,
+      "source": "Dagannoth kings",
+      "task": "Pet dagganoth rex",
+      "rate": 166,
+      "divisor": 3,
+      "coins": 55,
+      "coinvalue": 55,
+      "completed": false
+    },
+    {
+      "_id": 7,
+      "source": "Dagannoth kings",
+      "task": "Pet dagganoth supreme",
+      "rate": 166,
+      "divisor": 3,
+      "coins": 55,
+      "coinvalue": 55,
+      "completed": false
+    },
+    {
+      "_id": 8,
+      "source": "The Gauntlet",
+      "task": "Crystal weapon seed",
+      "rate": 10,
+      "divisor": 2,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 9,
+      "source": "The Gauntlet",
+      "task": "Crystal armour seed",
+      "rate": 10,
+      "divisor": 2,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 10,
+      "source": "The Gauntlet",
+      "task": "Enhanced crystal weapon seed",
+      "rate": 80,
+      "divisor": 1,
+      "coins": 80,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 11,
+      "source": "The Gauntlet",
+      "task": "Youngllef",
+      "rate": 160,
+      "divisor": 1,
+      "coins": 160,
+      "coinvalue": 160,
+      "completed": false
+    },
+    {
+      "_id": 12,
+      "source": "Hespori",
+      "task": "Bottomless compost bucket",
+      "rate": 8,
+      "divisor": 1,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 13,
+      "source": "Kalphite queen",
+      "task": "Kq head ",
+      "rate": 8,
+      "divisor": 2,
+      "coins": 4,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 14,
+      "source": "Kalphite queen",
+      "task": "Dragon pickaxe(from KQ)",
+      "rate": 27,
+      "divisor": 2,
+      "coins": 14,
+      "coinvalue": 15,
+      "completed": false
+    },
+    {
+      "_id": 15,
+      "source": "Kalphite queen",
+      "task": "Jar of sand",
+      "rate": 133,
+      "divisor": 1,
+      "coins": 133,
+      "coinvalue": 135,
+      "completed": false
+    },
+    {
+      "_id": 16,
+      "source": "Kalphite queen",
+      "task": "Kalphite princess",
+      "rate": 200,
+      "divisor": 1,
+      "coins": 200,
+      "coinvalue": 200,
+      "completed": false
+    },
+    {
+      "_id": 17,
+      "source": "Nightmare",
+      "task": "Nightmare staff",
+      "rate": 100,
+      "divisor": 5,
+      "coins": 20,
+      "coinvalue": 20,
+      "completed": false
+    },
+    {
+      "_id": 18,
+      "source": "Nightmare",
+      "task": "Inquisitor's great helm",
+      "rate": 150,
+      "divisor": 5,
+      "coins": 30,
+      "coinvalue": 30,
+      "completed": false
+    },
+    {
+      "_id": 19,
+      "source": "Nightmare",
+      "task": "Inquisitor's hauberk",
+      "rate": 150,
+      "divisor": 5,
+      "coins": 30,
+      "coinvalue": 30,
+      "completed": false
+    },
+    {
+      "_id": 20,
+      "source": "Nightmare",
+      "task": "Inquisitor's plateskirt",
+      "rate": 150,
+      "divisor": 5,
+      "coins": 30,
+      "coinvalue": 30,
+      "completed": false
+    },
+    {
+      "_id": 21,
+      "source": "Nightmare",
+      "task": "Inquisitor's mace",
+      "rate": 300,
+      "divisor": 5,
+      "coins": 60,
+      "coinvalue": 60,
+      "completed": false
+    },
+    {
+      "_id": 22,
+      "source": "Nightmare",
+      "task": "Volatile orb",
+      "rate": 450,
+      "divisor": 5,
+      "coins": 90,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 23,
+      "source": "Nightmare",
+      "task": "Eldritch orb",
+      "rate": 450,
+      "divisor": 5,
+      "coins": 90,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 24,
+      "source": "Nightmare",
+      "task": "Harmonised orb",
+      "rate": 450,
+      "divisor": 5,
+      "coins": 90,
+      "coinvalue": 90,
+      "completed": false
+    },
+    {
+      "_id": 25,
+      "source": "Nightmare",
+      "task": "Jar of dreams",
+      "rate": 200,
+      "divisor": 5,
+      "coins": 40,
+      "coinvalue": 40,
+      "completed": false
+    },
+    {
+      "_id": 26,
+      "source": "Nightmare",
+      "task": "Little nightmare",
+      "rate": 400,
+      "divisor": 5,
+      "coins": 80,
+      "coinvalue": 80,
+      "completed": false
+    },
+    {
+      "_id": 27,
+      "source": "Phantom Muspah",
+      "task": "Venator shard",
+      "rate": 5,
+      "divisor": 1,
+      "coins": 5,
+      "coinvalue": 5,
+      "completed": false
+    },
+    {
+      "_id": 28,
+      "source": "Phantom Muspah",
+      "task": "Muphin",
+      "rate": 125,
+      "divisor": 1,
+      "coins": 125,
+      "coinvalue": 125,
+      "completed": false
+    },
+    {
+      "_id": 29,
+      "source": "Sarachnis",
+      "task": "Sarachnis cudgel",
+      "rate": 8,
+      "divisor": 1,
+      "coins": 8,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 30,
+      "source": "Sarachnis",
+      "task": "Jar of eyes",
+      "rate": 40,
+      "divisor": 1,
+      "coins": 40,
+      "coinvalue": 40,
+      "completed": false
+    },
+    {
+      "_id": 31,
+      "source": "Sarachnis",
+      "task": "Sraracha",
+      "rate": 60,
+      "divisor": 1,
+      "coins": 60,
+      "coinvalue": 60,
+      "completed": false
+    },
+    {
+      "_id": 32,
+      "source": "Vorkath",
+      "task": "Dragonbone necklace",
+      "rate": 50,
+      "divisor": 2,
+      "coins": 25,
+      "coinvalue": 25,
+      "completed": false
+    },
+    {
+      "_id": 33,
+      "source": "Vorkath",
+      "task": "Jar of decay",
+      "rate": 150,
+      "divisor": 1,
+      "coins": 150,
+      "coinvalue": 150,
+      "completed": false
+    },
+    {
+      "_id": 34,
+      "source": "Vorkath",
+      "task": "Vorki",
+      "rate": 150,
+      "divisor": 1,
+      "coins": 150,
+      "coinvalue": 150,
+      "completed": false
+    },
+    {
+      "_id": 35,
+      "source": "Vorkath",
+      "task": "Skeletal visage",
+      "rate": 250,
+      "divisor": 1,
+      "coins": 250,
+      "coinvalue": 250,
+      "completed": false
+    },
+    {
+      "_id": 36,
+      "source": "Zulrah",
+      "task": "Magic fang",
+      "rate": 20,
+      "divisor": 3,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 37,
+      "source": "Zulrah",
+      "task": "Tanzanite fang",
+      "rate": 20,
+      "divisor": 3,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 38,
+      "source": "Zulrah",
+      "task": "Serpentine visage",
+      "rate": 20,
+      "divisor": 3,
+      "coins": 7,
+      "coinvalue": 10,
+      "completed": false
+    },
+    {
+      "_id": 39,
+      "source": "Zulrah",
+      "task": "Jar of swamp",
+      "rate": 120,
+      "divisor": 3,
+      "coins": 40,
+      "coinvalue": 40,
+      "completed": false
+    },
+    {
+      "_id": 40,
+      "source": "Zulrah",
+      "task": "Pet snakeling",
+      "rate": 160,
+      "divisor": 1,
+      "coins": 160,
+      "coinvalue": 160,
+      "completed": false
+    },
+    {
+      "_id": 41,
+      "source": "Zulrah",
+      "task": "Magma mutagen",
+      "rate": 262,
+      "divisor": 1,
+      "coins": 262,
+      "coinvalue": 265,
+      "completed": false
+    },
+    {
+      "_id": 42,
+      "source": "Zulrah",
+      "task": "Tanzanite mutagen",
+      "rate": 262,
+      "divisor": 1,
+      "coins": 262,
+      "coinvalue": 265,
+      "completed": false
+    }
+  ]
+}]
