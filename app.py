@@ -30,6 +30,7 @@ def admin_login():
     if request.method == 'POST':
         username = request.form['username']
         passsword = request.form['password']
+        
     return render_template('clan_event_admin_login.html')
 
 
