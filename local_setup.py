@@ -17,8 +17,11 @@ def import_db(filename: str, collection: object) -> None:
         del data[0]['_id']
         collection.insert_one(data[0])
 
-def test_login():
+
+def test_login() -> None:
     login_coll.insert_one({"username": "claneventadmin", "hash_pass": bcrypt.hashpw("password".encode('utf-8'), bcrypt.gensalt())})
+
+
 if __name__ == '__main__':
     import_db('MASTER.json', master_coll)
     import_db('EVENT.json', event_coll)

@@ -7,7 +7,7 @@ db = db_client["ClanEvent"]
 master_coll = db["MASTER"]
 
 
-def get_tasks():
+def get_tasks() -> None:
     return master_coll.find_one(
             {
                 "Name": "MASTER"
@@ -26,7 +26,7 @@ def get_tasks():
             }
         )
 
-def update_task(task_type, task_id, rate, divisor, coins, coinvalue):
+def update_task(task_type: str, task_id: int, rate: int, divisor: int, coins: int, coinvalue: int) -> None:
     master_coll.update_one({"Name": "MASTER", f"{task_type}._id" : task_id}, 
                   {"$set": 
                     {

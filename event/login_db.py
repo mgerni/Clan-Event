@@ -7,7 +7,7 @@ db = db_client["ClanEvent"]
 
 login_coll = db["LOGIN"]
 
-def admin_login(username, password):
+def admin_login(username: str, password: str) -> bool:
     user_lookup = login_coll.find_one({"username": username})
     if user_lookup:
         hashed_pass = user_lookup["hash_pass"]
