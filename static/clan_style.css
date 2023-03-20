@@ -277,3 +277,22 @@ svg {
     
 }
 
+table, th, td {
+    border: white 1px solid;
+    text-align: center;
+}
+
+.td-no-style {
+    all:unset
+}
+
+.td-small {
+    all: unset;
+    width: 2em;    
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+

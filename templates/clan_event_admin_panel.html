@@ -1,0 +1,177 @@
+{% extends "base_clan_event.html" %}
+
+{% block title %}
+Clan Event - Admin Panel
+{% endblock %}
+
+{% block context %}
+
+<body>
+    <div class="container rsText">
+        <table style="width: 100%;">
+            <tr>
+                <th>Type</th>
+                <th>Source</th>
+                <th>Task</th>
+                <th>_id</th>
+                <th>Rate</th>
+                <th>Divisor</th>
+                <th>Coins</th>
+                <th>Coin value</th>
+            </tr>
+
+            {% for task in tasks["Skilling Minigames"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Skilling Minigames"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Raids"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Raids"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Slayer bosses"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Slayer bosses"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Slayer uniques"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Slayer uniques"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Monster mash"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Monster mash"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Wilderness"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Wilderness"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Clues"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Clues"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["God Wars dungeon"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="God Wars dungeon"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% for task in tasks["Various bosses"] %}
+            <tr>
+                <form method="POST">
+                    <td><input class="td-no-style disabled"type="text" class="td-no-style" name="type" value="Various bosses"></td>
+                    <td>{{task["source"]}}</td>
+                    <td name="{{task['_id']}}">{{task["task"]}}</td>
+                    <td><input class="td-small disabled" type="text" name="_id" id="_id" value="{{task['_id']}}"></td>
+                    <td><input class="td-small"type="number" name="rate" id="rate" value="{{task['rate']}}"></td>
+                    <td><input class="td-small"type="number" name="divisor" id="divisor" value="{{task['divisor']}}"></td>
+                    <td><input class="td-small"type="number" name="coins" id="coins" value="{{task['coins']}}"></td>
+                    <td><input class="td-small"type="number" name="coinvalue" id="coinvalue" value="{{task['coinvalue']}}"></td>
+                    <td><button class="login-button">Submit</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+
+
+
+        </table>
+
+    </div>
+</body>
+
+
+
+
+{% endblock %}
