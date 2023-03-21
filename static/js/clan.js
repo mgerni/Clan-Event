@@ -1,27 +1,3 @@
-// const zoomElement = document.querySelector(".zoom");
-
-// let zoom = 1;
-
-// const ZOOM_SPEED = 0.1;
-
-// document.addEventListener("wheel", function(e) {  
-//     console.log(e.deltaY);
-//     console.log(zoomElement.style.transform)
-    
-//     if(e.deltaY < 0){   
-//         if(zoomElement.style.transform != "scale(1.1)"){
-//             zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;  
-//         } 
-        
-//     }
-//     else{    
-//         if (zoomElement.style.transform != "scale(0.3)"){
-//             zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`
-//         };  
-//     }
-// });
-
-
 const modal = document.querySelector("#modal");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
@@ -213,47 +189,47 @@ window.addEventListener('load', function() {
     }, false);
 
 
-    openModal.addEventListener("click", () => {
+    // openModal.addEventListener("click", () => {
 
-        if (shown1) {
-            shown1 = !shown1;
-            shown2 = !shown2
-            shown3 = !shown3
-            shown4 = !shown4
-            shown5 = !shown5
-            shown6 = !shown6
-            shown7 = !shown7
-            shown8 = !shown8
-            shown9 = !shown9
-            shown10 = !shown10
-            shown11 = !shown11
-            shown12 = !shown12
-            shown13 = !shown13
-            shown14 = !shown14
-            shown15 = !shown15
+    //     if (shown1) {
+    //         shown1 = !shown1;
+    //         shown2 = !shown2
+    //         shown3 = !shown3
+    //         shown4 = !shown4
+    //         shown5 = !shown5
+    //         shown6 = !shown6
+    //         shown7 = !shown7
+    //         shown8 = !shown8
+    //         shown9 = !shown9
+    //         shown10 = !shown10
+    //         shown11 = !shown11
+    //         shown12 = !shown12
+    //         shown13 = !shown13
+    //         shown14 = !shown14
+    //         shown15 = !shown15
 
-            line1[shown1 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line2[shown2 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line3[shown3 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line4[shown4 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line5[shown5 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line6[shown6 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line7[shown7 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line8[shown8 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line9[shown9 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line10[shown10 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line11[shown11 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line12[shown12 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line13[shown13 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line14[shown14 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-            line15[shown15 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-        }
+    //         line1[shown1 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line2[shown2 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line3[shown3 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line4[shown4 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line5[shown5 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line6[shown6 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line7[shown7 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line8[shown8 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line9[shown9 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line10[shown10 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line11[shown11 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line12[shown12 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line13[shown13 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line14[shown14 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //         line15[shown15 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
+    //     }
         
-        $(board).fadeOut(1000, function() {
-            $(teamRow).fadeOut(1000);
-            $(modal).fadeIn(1000);
-        });   
-    });
+    //     $(board).fadeOut(1000, function() {
+    //         $(teamRow).fadeOut(1000);
+    //         $(modal).fadeIn(1000);
+    //     });   
+    // });
     
     closeModal.addEventListener("click", () => {
         
@@ -263,5 +239,12 @@ window.addEventListener('load', function() {
         });
     });
 
+  });
+
+
+  $(document).ready(function() {
+    $(document).on('click', '.open-button', function(){
+      $('#modal').modal('show');
+    });
   });
 

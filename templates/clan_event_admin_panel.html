@@ -7,8 +7,30 @@ Clan Event - Admin Panel
 {% block context %}
 
 <body>
+    <header class="rsText">
+        <h3 class="logo">Task Party - Admin</h3>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="#" class="taskButton">Tasks</a></li>
+                <li><a href="#" class="teamButton">Teams</a></li>
+                <li><a href="/event/admin/logout/">Logout</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+
     <div class="container rsText">
-        <table style="width: 100%;">
+        <table style="width: 100%;" id="taskTable">
             <tr>
                 <th>Type</th>
                 <th>Source</th>
@@ -167,11 +189,49 @@ Clan Event - Admin Panel
 
 
         </table>
+            <div class="teams">
+                <div class="team-container">
+                    <div class="add-team">
+                        <form action="/event/admin/add_team/" method="POST" id="teamForm" class="teamForm">
+                            <input type="text" name="team_name" placeholder="Team Name">
+                            <input type="text" name="username" id="username" placeholder="username">
+                            <input type="password" name="password" id="password" placeholder="**********">
+                        </form>
+                        <textarea name="members" id="members" cols="30" rows="10" form="teamForm" placeholder="Comma seperated list of team members names. Example: bob,joe,tom"></textarea>
+                        <button form="teamForm">Add</button>
+                    </div>
+                </div>
+    
+    
+                <br>
+                <br>
+    
+                <div class="teams-box">
+                    {% for team in teams %}
+                        
+                            <p>{{team['Name']}}</p>
+                            {% for member in team["members"] %}
+                            <p>{{member}}</p>
+                            {% endfor %}
+                        
+                    {% endfor %}
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
 
     </div>
 </body>
 
 
-
+<script src="{{ url_for('static', filename='js/clan-admin.js') }}"></script>
 
 {% endblock %}
+
+
