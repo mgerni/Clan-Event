@@ -7,9 +7,9 @@ MONGO_URI = 'mongodb://localhost:27017/'
 db_client = pymongo.MongoClient(MONGO_URI)
 
 
-db = db_client["ClanEvent"]
-master_coll = db["MASTER"]
-game_coll = db["GAME"]
+db = db_client['ClanEvent']
+master_coll = db['MASTER']
+game_coll = db['GAME']
 
 '''
 Team Class:
@@ -36,19 +36,19 @@ class Team:
 
     def move_tiles(self, roll: int, start_index: int) -> list:
         if roll != 0:
-            if len(all_tiles[start_index]["neighbor_list"]) != 2:
-                start_index = all_tiles[start_index]["neighbor_list"][0]["neighbor_id"]
+            if len(all_tiles[start_index]['neighbor_list']) != 2:
+                start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
                 roll -= 1
                 self.move_tiles(roll, start_index)
 
-            self.neighbors = all_tiles[start_index]["neighbor_list"]
+            self.neighbors = all_tiles[start_index]['neighbor_list']
             return
             
         else:
             self.current_tile = start_index
         
     def update_db(self, team_id: int) -> None:
-        print("DO THE THING TO UPDATE THE DATABASE FOR THE TEAM")
+        print('DO THE THING TO UPDATE THE DATABASE FOR THE TEAM')
 
 
 
@@ -56,13 +56,13 @@ class Team:
 
 
 
-if __name__ == "__main__":
-    team = Team(215, "Team 1")
-    print(f"CURRENT TILE is: {team.current_tile}")
-    print(f"{team.name} ROLLED: 5!")
-    print(f"{team.name} Moves from [id: {team.current_tile}: type: {all_tiles[team.current_tile]['type']}] to...")
+if __name__ == '__main__':
+    team = Team(215, 'Team 1')
+    print(f'CURRENT TILE is: {team.current_tile}')
+    print(f'{team.name} ROLLED: 5!')
+    print(f'{team.name} Moves from [id: {team.current_tile}: type: {all_tiles[team.current_tile]["type"]}] to...')
     team.move_tiles(5, team.current_tile)
-    print(f"TILE: [id: {team.current_tile}]: type: {all_tiles[team.current_tile]['type']}")
+    print(f'TILE: [id: {team.current_tile}]: type: {all_tiles[team.current_tile]["type"]}')
     team.update_db(0)
 
 
