@@ -157,16 +157,16 @@ Clan Event Board
             <div class="card misc-boss-tile open-button rsText" id="{{tile['id']}}">{{tile['id']}}</div>
     
             {% elif tile["type"]  == "B" %}
-            <div class="card rsText tbd" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card bank-tile" id="{{tile['id']}}">{{tile['id']}}</div>
     
             {% elif tile["type"]  == "X" %}
-            <div class="card rsText tbd" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card bowser-tile" id="{{tile['id']}}"></div>
     
             {% elif tile["type"]  == "S" %}
-            <div class="card rsText tbd" id="element-2">{{tile['id']}}</div>
+            <div class="card start-tile" id="element-2">{{tile['id']}}</div>
     
             {% elif tile["type"]  == "O" %}
-            <div class="card rsText tbd" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card shop-tile" id="{{tile['id']}}">{{tile['id']}}</div>
     
             {% endif %}
             {% endfor %}
