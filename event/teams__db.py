@@ -21,5 +21,8 @@ def create_team(name: str, members: list, username: str, password: str) -> None:
     new_team["hash_pass"] = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     teams_coll.insert_one(new_team)
 
+def get_team_info(username: str) -> dict:
+    return teams_coll.find_one({'username': username}, {'_id': 0})
+
 def get_teams() -> list: 
     return teams_coll.find()

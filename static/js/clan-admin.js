@@ -8,7 +8,9 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     $(document).on('click', '.taskButton', function(){
+
       $(".teams").fadeOut(1000);
       $('#taskTable').fadeIn(3000);
+
     });
   });

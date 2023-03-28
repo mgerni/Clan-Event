@@ -21,7 +21,7 @@ const startElement13 = document.getElementById("element-13-1");
 const startElement14 = document.getElementById("element-14-1");
 const startElement15 = document.getElementById("element-15-1");
 
-const endElement = document.getElementById("element-2")
+const endElement = document.getElementById("215")
 
 
 
@@ -231,20 +231,51 @@ window.addEventListener('load', function() {
     //     });   
     // });
     
-    closeModal.addEventListener("click", () => {
-        
-        $(modal).fadeOut(1000, function() {
-            $(board).fadeIn(1000);
-            $(teamRow).fadeIn(1000);
-        });
-    });
+  });
 
+  $(document).ready(function(){
+    modal.addEventListener('cancel', (event) => {
+      event.preventDefault();
+    });
   });
 
 
   $(document).ready(function() {
-    $(document).on('click', '.open-button', function(){
-      $('#modal').modal('show');
+    $(document).on('click', '.open-button', function() {
+      const svgs = document.getElementsByTagName("svg")
+
+      for (let i = 0; i < svgs.length; i++) {
+        svgs[i].style.visibility = "hidden";
+      };
+
+      $(board).fadeOut(1000);
+      $(".team-row").fadeOut(1000);
+      modal.showModal()
     });
   });
 
+  $(document).ready(function() {
+    $(document).on('click', '.btn-close', () => {
+      
+      modal.close()
+      $(board).fadeIn(1000);
+      $(".team-row").fadeIn(1000);
+      
+    });
+  });
+
+
+  $(document).ready(function() {
+    $(document).on('click', '.completeButton', function() {
+      $('form').submit(false);
+      var type = $(this).attr('type');
+      var id = $(this).attr('_id');
+      var coins = $(this).attr('coins');
+
+      console.log(type, id, coins)
+    });
+  });
+
+
+
+  

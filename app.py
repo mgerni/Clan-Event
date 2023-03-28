@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, session, redirect
 from functools import wraps
-import pymongo 
-from event.board import all_tiles
-from event import login_db, tasks_db, teams__db
+import pymongo
+from event import login_db, tasks_db, teams__db, clan_event, board
+
 
 
 
@@ -16,6 +16,8 @@ db_client = pymongo.MongoClient(MONGO_URI)
 db = db_client["ClanEvent"]
 master_coll = db["MASTER"]
 game_coll = db["GAME"]
+
+team = None
 
 
 def admin_required(f):
@@ -55,7 +57,13 @@ def event_login():
 @app.route('/event/')
 @event_login_required
 def event():
-    return render_template("clan_event.html", all_tiles=all_tiles)
+    if not len(clan_event.Team.instances):
+        team = clan_event.Team(session['team_username'])
+    else:
+        team = clan_event.Team.instances[0]
+    teams = teams__db.get_teams()
+    all_tiles = board.all_tiles
+    return render_template("clan_event.html", all_tiles=all_tiles, teams=teams, current_team=team)
 
 
 @app.route('/event/admin/login/', methods=['GET', 'POST'])
@@ -69,6 +77,12 @@ def admin_login():
             return redirect("/event/admin/")
     return render_template('clan_event_admin_login.html')
 
+@app.route('/event/logout/')
+@event_login_required
+def event_logout():
+    clan_event.Team.instances = []
+    session.clear()
+    return redirect('/event/login')
 
 @app.route('/event/admin/logout/')
 @admin_required
@@ -99,6 +113,7 @@ def admin_panel():
     teams = teams__db.get_teams()
     return render_template('clan_event_admin_panel.html', tasks=tasks, teams=teams)
 
+
 @app.route('/event/admin/add_team/', methods=['POST'])
 @admin_required
 def add_team():
@@ -108,5 +123,14 @@ def add_team():
     members = request.form['members'].split(',')
     teams__db.create_team(team_name, members, username, password)
     return redirect('/event/admin/')
+
+
+@app.route('/event/task-complete/', methods=['POST'])
+@event_login_required
+def task_complete():
+    print(request.form['name'])
+    return redirect('/event/')
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
