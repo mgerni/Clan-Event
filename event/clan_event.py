@@ -57,8 +57,6 @@ class Team:
             return
 
         else:
-            print('roll', roll, 'start_tile', all_tiles[current_tile])
-            print('roll', roll, 'next_tile', all_tiles[current_tile]['neighbor_list'][0]['neighbor_id'])
             self.travelled.append(all_tiles[current_tile]['neighbor_list'][0]['neighbor_id'])
             next_tile = all_tiles[current_tile]['neighbor_list'][0]['neighbor_id']
             
@@ -73,7 +71,6 @@ class Team:
             elif all_tiles[next_tile]['type'] == 'X' and roll == 1:
                 print('Do bowser things')
                 self.current_tile = next_tile
-                print(self.current_tile)
 
 
             elif all_tiles[next_tile]['type'] == 'O':
@@ -81,86 +78,19 @@ class Team:
                 roll += 1
                 
             if roll > 1:
-                print('decrementing and going again!', roll)
                 roll -= 1
                 self.current_tile = next_tile
-                print(self.current_tile)
                 self.move_tiles(roll, next_tile)
                 
 
             elif roll == 1:
                 self.current_tile = next_tile
-                print('else', self.current_tile)
             
             elif roll == 0:
                 self.travelled.pop()
                 self.current_tile = current_tile
-                print(self.current_tile)
             
-        # print('donzo2', roll)
-        # self.current_tile = next_tile
-        # print(self.current_tile)
-        # update_team(self.username, {'current_tile': self.current_tile})
-        
-            
-            
-        # print('roll:', roll, 'start_index:', start_index, 'manual:', manual_move)
-        # # roll -= 1
-        # print(roll)
-        # if roll > 1:
-        #     print('length of all tiles[start_index]:', len(all_tiles[start_index]['neighbor_list']))
-        #     if len(all_tiles[start_index]['neighbor_list']) != 2:
-        #         self.travelled.append(all_tiles[start_index]['neighbor_list'][0]['neighbor_id'])
-        #         print('current tile: ', all_tiles[start_index])
-        #         start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
-        #         print('next tile: ', all_tiles[start_index])
-        #         if not manual_move:
-        #             if all_tiles[start_index]['type'] == 'O':
-        #                 self.shop_available = True
-        #                 update_team(self.username, {'shop_available' : True})
-        #             if all_tiles[start_index]['type'] == 'X':
-        #                 self.bowser_available = True
-        #                 update_team(self.username, {'bowser_available': True})
-        #             if all_tiles[start_index]['type'] == 'B':
-        #                 if self.coins >= 5:
-        #                     banked_coins = get_banked_coins()
-        #                     print('PASSED BANK TILE',roll, banked_coins)
-        #                     # send_embed_bank_passed(self.username, )
-        #             roll -= 1 
-        #             self.move_tiles(roll, start_index)
-                
-        #         else:
-        #             print(self.travelled)
-        #             roll -= 1 
-        #             self.move_tiles(roll, start_index)
-                
-        #     else:
-        #         print('else length 1')
-        #         self.neighbors = all_tiles[start_index]['neighbor_list']
-        #         return
-        # else:
-        #     self.travelled.append(all_tiles[start_index]['neighbor_list'][0]['neighbor_id'])
-        #     start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
-        #     if all_tiles[start_index]['type'] == 'O':
-        #         self.shop_available = True
-        #         update_team(self.username, {'shop_available' : True})
-        #         self.move_tiles(roll, start_index, manual_move=True)
-                
-        #     elif all_tiles[start_index]['type'] == 'X':
-        #         self.bowser_available = True
-        #         update_team(self.username, {'bowser_available' : True})
-        #         self.move_tiles(roll, start_index, manual_move=True)
-                
-        #     elif all_tiles[start_index]['type'] == 'B':
-                
-        #         print('LANDED ON BANK TILE')
-        #         self.move_tiles(roll, start_index, manual_move=True)
-            
-        #     else:
-        #         self.current_tile = start_index
-        #         print(roll, 'else hit ',start_index)
-        #         return
-        
+ 
     def update_attrs(self) -> None:
         
         self.team_info = get_team_info(self.username)

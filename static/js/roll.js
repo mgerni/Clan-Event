@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $(document).on('click', '.choice-menu', function() {
-      console.log('clicked');
       tile_index = $(this).attr('id');
 
       req = $.ajax({
@@ -40,8 +39,6 @@ $(document).ready(function() {
       });
 
       req.done(function(data) {
-        // console.log(' did the thing')
-        // console.log(data)
         var target = document.getElementsByClassName('container');
         $(target).html(data);
       });

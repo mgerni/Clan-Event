@@ -90,7 +90,6 @@ def roll_choice():
     if not team.roll_available:
         return redirect('/event/')
     all_tiles = board.all_tiles
-    
     tile_index = request.form['tile_index']
     roll = request.form['roll']
     tile = all_tiles[int(tile_index)]
@@ -108,7 +107,6 @@ def complete_roll():
     tile_index = int(tile_index)
     roll = request.form['roll']
     roll = int(roll)
-    # 6 - 5 - 1 = 0
     remaining_roll = roll - len(team.travelled) - 1
     team.neighbors = list()
     team.travelled.append(tile_index)
