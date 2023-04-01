@@ -21,7 +21,8 @@ const startElement13 = document.getElementById("element-13-1");
 const startElement14 = document.getElementById("element-14-1");
 const startElement15 = document.getElementById("element-15-1");
 
-const endElement = document.getElementById("215")
+const endElement = document.getElementById("215");
+
 
 
 
@@ -31,8 +32,7 @@ const endElement = document.getElementById("215")
 
 window.addEventListener('load', function() {
     'use strict';
-  
-    var line1 = new LeaderLine(startElement1, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#7348f7"}),
+    var line1 = new LeaderLine(startElement1, endElement1, {hide: true, startSocket: "right", endSocket: "top", color : "#7348f7"}),
       shown1 = false;
   
     startElement1.addEventListener('click', function() {
@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
       line1[shown1 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
 
-    var line2 = new LeaderLine(startElement2, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#58040f"}),
+    var line2 = new LeaderLine(startElement2, endElement2, {hide: true, startSocket: "right", endSocket: "top", color : "#58040f"}),
       shown2 = false;
   
     startElement2.addEventListener('click', function() {
@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
       line2[shown2 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line3 = new LeaderLine(startElement3, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#e85254"}),
+    var line3 = new LeaderLine(startElement3, endElement3, {hide: true, startSocket: "right", endSocket: "top", color : "#e85254"}),
       shown3 = false;
   
     startElement3.addEventListener('click', function() {
@@ -56,7 +56,7 @@ window.addEventListener('load', function() {
       line3[shown3 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line4 = new LeaderLine(startElement4, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#18a78a"}),
+    var line4 = new LeaderLine(startElement4, endElement4, {hide: true, startSocket: "right", endSocket: "top", color : "#18a78a"}),
       shown4 = false;
   
     startElement4.addEventListener('click', function() {
@@ -64,7 +64,7 @@ window.addEventListener('load', function() {
       line4[shown4 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line5 = new LeaderLine(startElement5, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#59c32e"}),
+    var line5 = new LeaderLine(startElement5, endElement5, {hide: true, startSocket: "right", endSocket: "top", color : "#59c32e"}),
       shown5 = false;
   
     startElement5.addEventListener('click', function() {
@@ -72,7 +72,7 @@ window.addEventListener('load', function() {
       line5[shown5 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line6 = new LeaderLine(startElement6, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#949ef6"}),
+    var line6 = new LeaderLine(startElement6, endElement6, {hide: true, startSocket: "right", endSocket: "top", color : "#949ef6"}),
       shown6 = false;
   
     startElement6.addEventListener('click', function() {
@@ -80,7 +80,7 @@ window.addEventListener('load', function() {
       line6[shown6 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line7 = new LeaderLine(startElement7, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#8b1674"}),
+    var line7 = new LeaderLine(startElement7, endElement7, {hide: true, startSocket: "right", endSocket: "top", color : "#8b1674"}),
       shown7 = false;
   
     startElement7.addEventListener('click', function() {
@@ -88,7 +88,7 @@ window.addEventListener('load', function() {
       line7[shown7 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line8 = new LeaderLine(startElement8, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#994d06"}),
+    var line8 = new LeaderLine(startElement8, endElement8, {hide: true, startSocket: "right", endSocket: "top", color : "#994d06"}),
       shown8 = false;
   
     startElement8.addEventListener('click', function() {
@@ -96,7 +96,7 @@ window.addEventListener('load', function() {
       line8[shown8 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line9 = new LeaderLine(startElement9, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#66c9ed"}),
+    var line9 = new LeaderLine(startElement9, endElement9, {hide: true, startSocket: "right", endSocket: "top", color : "#66c9ed"}),
       shown9 = false;
   
     startElement9.addEventListener('click', function() {
@@ -104,7 +104,7 @@ window.addEventListener('load', function() {
       line9[shown9 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line10 = new LeaderLine(startElement10, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#bbebbf"}),
+    var line10 = new LeaderLine(startElement10, endElement10, {hide: true, startSocket: "right", endSocket: "top", color : "#bbebbf"}),
       shown10 = false;
   
     startElement10.addEventListener('click', function() {
@@ -112,7 +112,7 @@ window.addEventListener('load', function() {
       line10[shown10 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line11 = new LeaderLine(startElement11, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#df842d"}),
+    var line11 = new LeaderLine(startElement11, endElement11, {hide: true, startSocket: "right", endSocket: "top", color : "#df842d"}),
       shown11 = false;
   
     startElement11.addEventListener('click', function() {
@@ -120,7 +120,7 @@ window.addEventListener('load', function() {
       line11[shown11 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line12 = new LeaderLine(startElement12, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#fd19cb"}),
+    var line12 = new LeaderLine(startElement12, endElement12, {hide: true, startSocket: "right", endSocket: "top", color : "#fd19cb"}),
       shown12 = false;
   
     startElement12.addEventListener('click', function() {
@@ -128,7 +128,7 @@ window.addEventListener('load', function() {
       line12[shown12 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line13 = new LeaderLine(startElement13, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#1c0e32"}),
+    var line13 = new LeaderLine(startElement13, endElement13, {hide: true, startSocket: "right", endSocket: "top", color : "#1c0e32"}),
       shown13 = false;
   
     startElement13.addEventListener('click', function() {
@@ -136,7 +136,7 @@ window.addEventListener('load', function() {
       line13[shown13 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line14 = new LeaderLine(startElement14, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#4262a0"}),
+    var line14 = new LeaderLine(startElement14, endElement14, {hide: true, startSocket: "right", endSocket: "top", color : "#4262a0"}),
       shown14 = false;
   
     startElement14.addEventListener('click', function() {
@@ -144,7 +144,7 @@ window.addEventListener('load', function() {
       line14[shown14 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
     }, false);
      
-    var line15 = new LeaderLine(startElement15, endElement, {hide: true, startSocket: "right", endSocket: "top", color : "#908c60"}),
+    var line15 = new LeaderLine(startElement15, endElement15, {hide: true, startSocket: "right", endSocket: "top", color : "#908c60"}),
       shown15 = false;
   
     startElement15.addEventListener('click', function() {
@@ -154,6 +154,9 @@ window.addEventListener('load', function() {
      
 
     showAll.addEventListener('click', function() {
+
+      // $(endElement1).addClass('team-1-current')
+      $(endElement2).addClass('team-2-current')
     shown1 = !shown1
     shown2 = !shown2
     shown3 = !shown3
@@ -187,50 +190,6 @@ window.addEventListener('load', function() {
     line15[shown15 ? 'show' : 'hide']("draw", {duration: 1000, timing: 'linear'});
 
     }, false);
-
-
-    // openModal.addEventListener("click", () => {
-
-    //     if (shown1) {
-    //         shown1 = !shown1;
-    //         shown2 = !shown2
-    //         shown3 = !shown3
-    //         shown4 = !shown4
-    //         shown5 = !shown5
-    //         shown6 = !shown6
-    //         shown7 = !shown7
-    //         shown8 = !shown8
-    //         shown9 = !shown9
-    //         shown10 = !shown10
-    //         shown11 = !shown11
-    //         shown12 = !shown12
-    //         shown13 = !shown13
-    //         shown14 = !shown14
-    //         shown15 = !shown15
-
-    //         line1[shown1 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line2[shown2 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line3[shown3 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line4[shown4 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line5[shown5 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line6[shown6 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line7[shown7 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line8[shown8 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line9[shown9 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line10[shown10 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line11[shown11 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line12[shown12 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line13[shown13 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line14[shown14 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //         line15[shown15 ? 'show' : 'hide']("fade", {duration: 1000, timing: 'linear'});
-    //     }
-        
-    //     $(board).fadeOut(1000, function() {
-    //         $(teamRow).fadeOut(1000);
-    //         $(modal).fadeIn(1000);
-    //     });   
-    // });
-    
   });
 
   $(document).ready(function(){
@@ -257,14 +216,15 @@ window.addEventListener('load', function() {
   $(document).ready(function() {
     $(document).on('click', '.btn-close', () => {
       
-      modal.close()
+      modal.close();
       $(board).fadeIn(1000);
       $(".team-row").fadeIn(1000);
       
     });
   });
 
-
+  
+  
   $(document).ready(function() {
     $(document).on('click', '.completeButton', function() {
       $('form').submit(false);
@@ -272,10 +232,6 @@ window.addEventListener('load', function() {
       var id = $(this).attr('_id');
       var coins = $(this).attr('coins');
 
-      console.log(type, id, coins)
     });
   });
 
-
-
-  

@@ -153,7 +153,7 @@ body{
 
 .myModal {
     background-color: rgb(75,65,55);
-    margin-top: 5%;
+    margin-top: 10%;
     box-shadow: 30px 25px 25px;
 }
 .modal-content {
@@ -162,8 +162,27 @@ body{
     justify-content: center;
     align-items: center;
     border: none;
+    flex-grow: 1;
 }
 
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+
+.choice-grid > .card {
+
+    aspect-ratio: 1 / 1;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -0px  10px 5px;
+    width: 75px;
+    height: 75px;
+    
+}
 .modal-tasks {
     display: flex;
     flex-grow: 1;
@@ -255,7 +274,7 @@ dialog {
 @font-face {
     font-family: rsText;
     src: url('RuneScape-UF.woff2') format('woff2'),
-        url('RuneScape-UF.woff') format('woff');
+         url('RuneScape-UF.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -265,7 +284,7 @@ dialog {
 
 .rsText {
     color: #ffff00;
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     font-family: rsText;
 }
 
@@ -557,4 +576,79 @@ nav a {
     justify-content: center;
 }
 
+.choice-menu {
+    box-shadow: 0 -0px  10px 5px red;
+    animation: shake 1.99s cubic-bezier(.36,.07,.19,.97) both;
 
+}
+
+@keyframes shake {
+    10%{
+      transform: translate3d(-1px, 0, 0);
+      transform: scale(.5);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+  }
+
+.roll {
+    display: none;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20%;
+    animation-name: roll-animation;
+    animation-fill-mode: fowards;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+@keyframes roll-animation {
+
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+.roll > h1 {
+    /* font-weight: 900; */
+    font-size: 5rem !important;
+}
+.roll-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.travel-color {
+    box-shadow: 0 -0px  10px 5px white;
+}
+
+.travel-color-end {
+    animation: shake 1.99s cubic-bezier(.36,.07,.19,.97) both;
+    box-shadow: 0 -0px  10px 5px rgb(7, 233, 37);
+}

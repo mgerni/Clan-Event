@@ -1,0 +1,53 @@
+<div class="modal-header rsText">
+    <h4>Choose this tile?</h4>
+    <button class="btn-close"></button>
+</div>
+<br>
+<br>
+<div class="choice-grid rsText">
+    {% if tile["type"] == 1 %}
+    <div class="card minigame-tile" name="Skilling Minigames" id="{{tile['id']}}">Minigames</div>
+
+    {% elif tile["type"]  == 2 %}
+    <div class="card raids-tile" id="{{tile['id']}}">Raids</div>
+
+    {% elif tile["type"]  == 3 %}
+    <div class="card slayer-boss-tile" id="{{tile['id']}}">Slayer Bosses</div>
+
+    {% elif tile["type"]  == 4 %}
+    <div class="card slayer-monsters-tile" id="{{tile['id']}}">Slayer Unqiues</div>
+
+    {% elif tile["type"]  == 5 %}
+    <div class="card monster-mash-tile" id="{{tile['id']}}">Monster Mash</div>
+
+    {% elif tile["type"]  == 6 %}
+    <div class="card wilderness-tile" id="{{tile['id']}}">Wilderness</div>
+
+    {% elif tile["type"]  == 7 %}
+    <div class="card clues-tile" id="{{tile['id']}}">Clues</div>
+
+    {% elif tile["type"]  == 8 %}
+    <div class="card godwars-tile" id="{{tile['id']}}">God Wars</div>
+
+    {% elif tile["type"]  == 9 %}
+    <div class="card misc-boss-tile" id="{{tile['id']}}">Various Bosses</div>
+
+    {% elif tile["type"]  == "B" %}
+    <div class="card bank-tile" id="{{tile['id']}}">Bank</div>
+
+    {% elif tile["type"]  == "X" %}
+    <div class="card bowser-tile" id="{{tile['id']}}">Bowser</div>
+
+    {% elif tile["type"]  == "S" %}
+    <div class="card start-tile" id="{{tile['id']}}">Start</div>
+
+    {% elif tile["type"]  == "O" %}
+    <div class="card shop-tile" id="{{tile['id']}}">Shop</div>
+
+    {% endif %}
+
+    <br>
+    <button class="confirm-tile button-complete" roll="{{roll}}" tile_id="{{tile['id']}}">Confirm</button>
+</div>
+
+    

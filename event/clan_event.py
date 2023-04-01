@@ -1,6 +1,8 @@
 from .board import all_tiles
 import pymongo
-from .teams__db import get_team_info
+from .teams_db import get_team_info, update_team
+import random
+from .webhook import send_embed_bank_passed
 
 
 
@@ -10,7 +12,7 @@ db_client = pymongo.MongoClient(MONGO_URI)
 
 db = db_client['ClanEvent']
 master_coll = db['MASTER']
-game_coll = db['GAME']
+game_coll = db['EVENT']
 
 '''
 Team Class:
@@ -31,48 +33,171 @@ Team Class:
     update_db():
         Class method, update teams current_tile in database. NOT YET IMPLEMENTED. 
             team_id: int - id value for the team
+
+    update_attrs():
+        Class method, updates the attributes of the class instance from database.
+
+    team_roll():
+        Class method, rolls a random int between 1 and 10. 
 '''
 class Team:
     instances = []
     def __init__(self, username: str) -> None:
         self.__class__.instances.append(self)
         self.username = username
-        team_info = get_team_info(self.username)
-        self.name = team_info['Name']
-        self.current_tile = team_info['current_tile']
-        self.coin_multiplier = team_info['coin_multiplier']
-        self.members = team_info['members']
+        self.team_info = get_team_info(self.username)
         self.neighbors = list()
-        self.skilling_minigames = team_info['Skilling Minigames']
-        self.raids = team_info['Raids']
-        self.slayer_bosses = team_info['Slayer bosses']
-        self.slayer_uniques = team_info['Slayer uniques']
-        self.monster_mash = team_info['Monster mash']
-        self.wilderness = team_info['Wilderness']
-        self.clues = team_info['Clues']
-        self.godwars = team_info['God Wars dungeon']
-        self.various_bosses = team_info['Various bosses']
+        self.travelled = list()
+        self.update_attrs()
 
-    def move_tiles(self, roll: int, start_index: int) -> list:
-        if roll != 0:
-            if len(all_tiles[start_index]['neighbor_list']) != 2:
-                start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
-                roll -= 1
-                self.move_tiles(roll, start_index)
 
-            self.neighbors = all_tiles[start_index]['neighbor_list']
+    def move_tiles(self, roll: int, current_tile: int, manual_move: bool=False) -> list:
+        if len(all_tiles[current_tile]['neighbor_list']) == 2:
+            self.neighbors = all_tiles[current_tile]['neighbor_list']
             return
-            
+
         else:
-            self.current_tile = start_index
+            print('roll', roll, 'start_tile', all_tiles[current_tile])
+            print('roll', roll, 'next_tile', all_tiles[current_tile]['neighbor_list'][0]['neighbor_id'])
+            self.travelled.append(all_tiles[current_tile]['neighbor_list'][0]['neighbor_id'])
+            next_tile = all_tiles[current_tile]['neighbor_list'][0]['neighbor_id']
+            
+            if all_tiles[next_tile]['type'] == 'B' and roll > 1:
+                print('Pay Money to bank', roll)
+                self.current_tile = next_tile
+                print(self.current_tile)
+            
+            elif all_tiles[next_tile]['type'] == 'B':
+                print('Get money from bank', roll)
+            
+            elif all_tiles[next_tile]['type'] == 'X' and roll == 1:
+                print('Do bowser things')
+                self.current_tile = next_tile
+                print(self.current_tile)
+
+
+            elif all_tiles[next_tile]['type'] == 'O':
+                print('Do shop things')
+                roll += 1
+                
+            if roll > 1:
+                print('decrementing and going again!', roll)
+                roll -= 1
+                self.current_tile = next_tile
+                print(self.current_tile)
+                self.move_tiles(roll, next_tile)
+                
+
+            elif roll == 1:
+                self.current_tile = next_tile
+                print('else', self.current_tile)
+            
+            elif roll == 0:
+                self.travelled.pop()
+                self.current_tile = current_tile
+                print(self.current_tile)
+            
+        # print('donzo2', roll)
+        # self.current_tile = next_tile
+        # print(self.current_tile)
+        # update_team(self.username, {'current_tile': self.current_tile})
         
+            
+            
+        # print('roll:', roll, 'start_index:', start_index, 'manual:', manual_move)
+        # # roll -= 1
+        # print(roll)
+        # if roll > 1:
+        #     print('length of all tiles[start_index]:', len(all_tiles[start_index]['neighbor_list']))
+        #     if len(all_tiles[start_index]['neighbor_list']) != 2:
+        #         self.travelled.append(all_tiles[start_index]['neighbor_list'][0]['neighbor_id'])
+        #         print('current tile: ', all_tiles[start_index])
+        #         start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
+        #         print('next tile: ', all_tiles[start_index])
+        #         if not manual_move:
+        #             if all_tiles[start_index]['type'] == 'O':
+        #                 self.shop_available = True
+        #                 update_team(self.username, {'shop_available' : True})
+        #             if all_tiles[start_index]['type'] == 'X':
+        #                 self.bowser_available = True
+        #                 update_team(self.username, {'bowser_available': True})
+        #             if all_tiles[start_index]['type'] == 'B':
+        #                 if self.coins >= 5:
+        #                     banked_coins = get_banked_coins()
+        #                     print('PASSED BANK TILE',roll, banked_coins)
+        #                     # send_embed_bank_passed(self.username, )
+        #             roll -= 1 
+        #             self.move_tiles(roll, start_index)
+                
+        #         else:
+        #             print(self.travelled)
+        #             roll -= 1 
+        #             self.move_tiles(roll, start_index)
+                
+        #     else:
+        #         print('else length 1')
+        #         self.neighbors = all_tiles[start_index]['neighbor_list']
+        #         return
+        # else:
+        #     self.travelled.append(all_tiles[start_index]['neighbor_list'][0]['neighbor_id'])
+        #     start_index = all_tiles[start_index]['neighbor_list'][0]['neighbor_id']
+        #     if all_tiles[start_index]['type'] == 'O':
+        #         self.shop_available = True
+        #         update_team(self.username, {'shop_available' : True})
+        #         self.move_tiles(roll, start_index, manual_move=True)
+                
+        #     elif all_tiles[start_index]['type'] == 'X':
+        #         self.bowser_available = True
+        #         update_team(self.username, {'bowser_available' : True})
+        #         self.move_tiles(roll, start_index, manual_move=True)
+                
+        #     elif all_tiles[start_index]['type'] == 'B':
+                
+        #         print('LANDED ON BANK TILE')
+        #         self.move_tiles(roll, start_index, manual_move=True)
+            
+        #     else:
+        #         self.current_tile = start_index
+        #         print(roll, 'else hit ',start_index)
+        #         return
+        
+    def update_attrs(self) -> None:
+        
+        self.team_info = get_team_info(self.username)
+        self.coins = self.team_info['coins']
+        self.total_coins = self.team_info['total_coins']
+        self.skilling_minigames = self.team_info['Skilling Minigames']
+        self.raids = self.team_info['Raids']
+        self.slayer_bosses = self.team_info['Slayer bosses']
+        self.slayer_uniques = self.team_info['Slayer uniques']
+        self.monster_mash = self.team_info['Monster mash']
+        self.wilderness = self.team_info['Wilderness']
+        self.clues = self.team_info['Clues']
+        self.godwars = self.team_info['God Wars dungeon']
+        self.various_bosses = self.team_info['Various bosses']
+        self.name = self.team_info['Name']
+        self.current_tile = self.team_info['current_tile']
+        self.coin_multiplier = self.team_info['coin_multiplier']
+        self.roll_available = self.team_info['roll_available']
+        self.shop_available = self.team_info['shop_available']
+        self.bowser_available = self.team_info['bowser_available']
+        self.members = self.team_info['members']
+
     def update_db(self, team_id: int) -> None:
         print('DO THE THING TO UPDATE THE DATABASE FOR THE TEAM')
 
+    def team_roll(self) -> int:
+        return random.choice(range(1, 11))
 
 
+def get_event_status() -> dict:
+    return game_coll.find_one({}, {'_id': 0,'frozen': 1})
 
+def get_banked_coins() -> dict:
+    return game_coll.find_one({}, {'_id': 0, 'bank_coins': 1})
 
+def add_banked_coins(coins: int) -> None:
+    game_coll.update_one({}, {'$set' : {'bank_coins': coins}})
 
 if __name__ == '__main__':
     team = Team("team1")

@@ -1,0 +1,176 @@
+<div class="board rsText">
+    {% for tile  in all_tiles %}
+
+    {% if tile["type"] == "E" %}
+    <div></div>
+
+    {% elif tile["type"] == 1 %}
+
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card minigame-tile  choice-menu" name="Skilling Minigames" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card minigame-tile" name="Skilling Minigames" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card minigame-tile" name="Skilling Minigames" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 2 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card raids-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card raids-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card raids-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 3 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card slayer-boss-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card slayer-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card slayer-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 4 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card slayer-monsters-tile  choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card slayer-monsters-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card slayer-monsters-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 5 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card monster-mash-tile  choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card monster-mash-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card monster-mash-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 6 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card wilderness-tile  choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card wilderness-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card wilderness-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+    {% elif tile["type"]  == 7 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card clues-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card clues-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card clues-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+    {% elif tile["type"]  == 8 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card godwars-tile  choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card godwars-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card godwars-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == 9 %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card misc-boss-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card misc-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card misc-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+
+    {% elif tile["type"]  == "B" %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card bank-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card bank-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card bank-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+    {% elif tile["type"]  == "X" %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card bowser-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card bowser-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card bowser-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+    {% elif tile["type"]  == "S" %}
+    <div class="card start-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+
+    {% elif tile["type"]  == "O" %}
+        {% if current_team.neighbors %}
+            {% if tile["id"] == current_team.neighbors[0]["neighbor_id"] or tile["id"] == current_team.neighbors[1]["neighbor_id"] %}
+                <div class="card shop-tile choice-menu" id="{{tile['id']}}">Choose 1</div>
+            {% else %}
+                <div class="card shop-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            {% endif %}
+        {% else %}
+            <div class="card shop-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+        {% endif %}
+
+    {% endif %}
+    {% endfor %}
+</div>
+
+<script type="text/javascript">
+    console.log({{travelled}})
+    for (let i = 0; i < {{travelled}}.length; i ++) {
+        if ({{roll}} == {{travelled}}.length && i + 1 == {{travelled}}.length) {
+            console.log('if hit')
+            document.getElementById({{travelled}}[i]).classList.add('travel-color-end');
+        }
+    
+        else if ({{roll}} < {{travelled}}.length && i + 1 == {{travelled}}.length) {
+            console.log('else if hit');
+            document.getElementById({{travelled}}[i]).classList.add('travel-color-end');
+        }
+    
+        else {
+            document.getElementById({{travelled}}[i]).classList.add('travel-color');
+        }
+    }
+    
+    
+    var travelled = {{travelled}};
+    var roll = {{roll}};
+    var all_tiles = {{all_tiles|tojson|safe}};
+</script>

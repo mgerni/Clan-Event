@@ -209,7 +209,7 @@ all_tiles = [
 {'type': 9, 'id': 207, 'neighbor_list': [{'neighbor_id': 206}]},
 {'type': 7, 'id': 208, 'neighbor_list': [{'neighbor_id': 207}]},
 {'type': 'O', 'id': 209, 'neighbor_list': [{'neighbor_id': 208}]},
-{'type': 1, 'id': 210, 'neighbor_list': [{'neighbor_id': 207}, {'neighbor_id': 192}]},
+{'type': 1, 'id': 210, 'neighbor_list': [{'neighbor_id': 209}, {'neighbor_id': 192}]},
 {'type': 6, 'id': 211, 'neighbor_list': [{'neighbor_id': 210}]},
 {'type': 'B', 'id': 212, 'neighbor_list': [{'neighbor_id': 211}]},
 {'type': 6, 'id': 213, 'neighbor_list': [{'neighbor_id': 212}]},

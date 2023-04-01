@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, session, redirect
 from functools import wraps
 import pymongo
-from event import login_db, tasks_db, teams__db, clan_event, board
-
+from event import login_db, tasks_db, teams_db, clan_event, board, webhook
+from time import sleep
 
 
 
@@ -61,9 +61,65 @@ def event():
         team = clan_event.Team(session['team_username'])
     else:
         team = clan_event.Team.instances[0]
-    teams = teams__db.get_teams()
+        team.neighbors = list()
+        team.travelled = list()
+        team.update_attrs()
+    teams = [ele for ele in teams_db.get_teams()]
     all_tiles = board.all_tiles
     return render_template("clan_event.html", all_tiles=all_tiles, teams=teams, current_team=team)
+
+@app.route('/event/roll/')
+@event_login_required
+def team_roll():
+    team = clan_event.Team.instances[0]
+    if not team.roll_available:
+        return redirect('/event/')
+    #broadcast roll message?
+    roll = team.team_roll()
+    team.move_tiles(roll, team.current_tile)
+    teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+    all_tiles = board.all_tiles
+    print('Sending travelled list from event/roll: ', team.travelled)
+    return render_template('clan_event_roll.html', all_tiles=all_tiles, current_team=team, roll=roll, travelled=team.travelled)
+
+
+@app.route('/event/roll/choice/', methods=['POST'])
+@event_login_required
+def roll_choice():
+    team = clan_event.Team.instances[0]
+    if not team.roll_available:
+        return redirect('/event/')
+    all_tiles = board.all_tiles
+    
+    tile_index = request.form['tile_index']
+    roll = request.form['roll']
+    tile = all_tiles[int(tile_index)]
+    return render_template('clan_event_roll_choice.html', all_tiles=all_tiles, tile=tile, current_team=team, roll=roll)
+
+
+@app.route('/event/roll/complete/', methods=['POST'])
+@event_login_required
+def complete_roll():
+    team = clan_event.Team.instances[0]
+    if not team.roll_available:
+        return redirect('/event/')
+    all_tiles = board.all_tiles
+    tile_index = request.form['tile_id']
+    tile_index = int(tile_index)
+    roll = request.form['roll']
+    roll = int(roll)
+    # 6 - 5 - 1 = 0
+    remaining_roll = roll - len(team.travelled) - 1
+    team.neighbors = list()
+    team.travelled.append(tile_index)
+    if all_tiles[tile_index]['type'] == 'O':
+        print('do shop things2')
+        remaining_roll += 1
+    team.move_tiles(remaining_roll, tile_index)
+    teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+    print('Sending travelled list from event/roll/choice: ', team.travelled)
+    return render_template('roll_choice.html', all_tiles=all_tiles, current_team=team, roll=roll, travelled=team.travelled)
+
 
 
 @app.route('/event/admin/login/', methods=['GET', 'POST'])
@@ -110,7 +166,7 @@ def admin_panel():
         tasks_db.update_task(task_type, task_id, rate, divisor, coins, coinvalue)
 
     tasks = tasks_db.get_tasks()
-    teams = teams__db.get_teams()
+    teams = teams_db.get_teams()
     return render_template('clan_event_admin_panel.html', tasks=tasks, teams=teams)
 
 
@@ -121,7 +177,7 @@ def add_team():
     username = request.form['username']
     password = request.form['password']
     members = request.form['members'].split(',')
-    teams__db.create_team(team_name, members, username, password)
+    teams_db.create_team(team_name, members, username, password)
     return redirect('/event/admin/')
 
 
@@ -131,6 +187,14 @@ def task_complete():
     print(request.form['name'])
     return redirect('/event/')
 
+@app.route('/event/message/', methods=['POST'])
+@event_login_required
+def discord_message():
+    team = clan_event.Team.instances[0]
+    delay = request.form['delay']
+    sleep(int(delay))
+    # webhook.send_message(f"{team.username.capitalize()} {request.form['message']}")
+    return 'just testing'
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

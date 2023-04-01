@@ -6,2330 +6,2351 @@ Clan Event Board
 
 {% block context %}
 
+<!-- 
+E                Empty
+1                Skilling Minigames
+2                Raids
+3                Slayer bosses
+4                Slayer uniques
+5                Monster mash
+6                Wilderness
+7                Clues
+8                God Wars dungeon
+9                Various bosses
+B                Bank
+X                Bowser
+S                Start
+O                Shop
+ -->
 
-<dialog class="myModal" id="modal">
-  {% set tile_type = all_tiles[current_team.current_tile]["type"]%}
-  {% if tile_type == "S" %}
 
-  <div class="modal-header rsText">
-    <h4>Start Tile</h4>
-    <button class="btn-close"></button>
-  </div>
-  <br>
-  <br>
-  <div class="modal-content rsText">
-    <div class="modal-tasks">
-      <p>Use the Roll button to start playing!</p>
-    </div>
-  </div>
-
-    {% elif tile_type == 1 %}
-
+<!-- Task Tile Modal -->
+<div class="centerpoint">
+  <dialog class="myModal" id="modal">
+    {% set tile_type = all_tiles[current_team.current_tile]["type"]%}
+    {% if tile_type == "S" %}
+  
     <div class="modal-header rsText">
-      <h4>Skilling Minigames</h4>
+      <h4>Start Tile</h4>
       <button class="btn-close"></button>
     </div>
     <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Guardians of the rift</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Guardians of the rift" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Wintertodt</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Wintertodt" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Tempoross</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Tempoross" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Hallowed Sepulchre</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Agility sepulchre" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Zalcano</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Zalcano" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-
-
-        <br>
-
-        <p>Volcanic Mine</p>
-        <table>
-          {% for task in current_team.skilling_minigames %}
-          {% if task["source"] == "Volcanic Mine" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-      </div>
-    </div>
-
-    {% elif tile_type == 2 %}
-
-    <div class="modal-header rsText">
-      <h4>Raids</h4>
-      <button class="btn-close"></button>
-    </div>
     <br>
     <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
       <div class="modal-tasks">
-        <p>Chambers of Xeric</p>
-        <table>
-          {% for task in current_team.raids %}
-          {% if task["source"] == "Chambers of Xeric" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Theatre of Blood</p>
-        <table>
-          {% for task in current_team.raids %}
-          {% if task["source"] == "Theatre of Blood" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Tombs of Amascut</p>
-        <table>
-          {% for task in current_team.raids %}
-          {% if task["source"] == "Tombs of Amascut" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
+        <p>Use the Roll button to start playing!</p>
       </div>
     </div>
-
-
-    {% elif tile_type == 3 %}
-
+  
+      {% elif tile_type == 1 %}
+  
+      <div class="modal-header rsText">
+        <h4>Skilling Minigames</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Guardians of the rift</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Guardians of the rift" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
     
-    <div class="modal-header rsText">
-      <h4>Slayer Bosses</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Grotesque Guardians</p>
-        <table>
-          {% for task in current_team.slayer_bosses %}
-          {% if task["source"] == "Grotesque Guardians" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Abyssal Sire</p>
-        <table>
-          {% for task in current_team.slayer_bosses %}
-          {% if task["source"] == "Abyssal Sire" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Wintertodt</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Wintertodt" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Kraken</p>
-        <table>
-          {% for task in current_team.slayer_bosses %}
-          {% if task["source"] == "Kraken" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Tempoross</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Tempoross" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Cerberus</p>
-        <table>
-          {% for task in current_team.slayer_bosses %}
-          {% if task["source"] == "Cerberus" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Hallowed Sepulchre</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Agility sepulchre" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Thermonuclear Smoke Devil</p>
-        <table>
-          {% for task in current_team.slayer_bosses %}
-          {% if task["source"] == "Thermonuclear Smoke Devil" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Zalcano</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Zalcano" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
+  
+          <br>
+  
+          <p>Volcanic Mine</p>
+          <table>
+            {% for task in current_team.skilling_minigames %}
+            {% if task["source"] == "Volcanic Mine" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+        </div>
       </div>
-    </div>
-    {% elif tile_type == 4 %}
-
-
-    <div class="modal-header rsText">
-      <h4>Slayer Uniques</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Basilisks</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Basilisks" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Kurasks</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Kurasks" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
+      {% elif tile_type == 2 %}
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Abyssal Demons</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Abyssal Demons" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Superiors</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Superiors" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Fossil Island Wyverns</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Fossil island wyverns" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Skeletal Wyverns</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Skeletal wyverns" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Dragons and Wyverns</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Dragons and wyverns" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Dark Beasts</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Dark beasts" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Vyrewatch</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Vyrewatch" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Mount Karuulm</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Mount Karuulm" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Alchemical Hydra</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Alchemical hydra" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Full Sets</p>
-        <table>
-          {% for task in current_team.slayer_uniques %}
-          {% if task["source"] == "Full sets" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
+      <div class="modal-header rsText">
+        <h4>Raids</h4>
+        <button class="btn-close"></button>
       </div>
-    </div>
-
-
-    {% elif tile_type == 5 %}
-
-    <div class="modal-header rsText">
-      <h4>Monster Mash</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Tzhaar</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Tzhaar" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Chambers of Xeric</p>
+          <table>
+            {% for task in current_team.raids %}
+            {% if task["source"] == "Chambers of Xeric" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Demonic gorillas</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Demonic gorillas" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Theatre of Blood</p>
+          <table>
+            {% for task in current_team.raids %}
+            {% if task["source"] == "Theatre of Blood" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Stronghold of Security</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Stronghold of security" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
+          <p>Tombs of Amascut</p>
+          <table>
+            {% for task in current_team.raids %}
+            {% if task["source"] == "Tombs of Amascut" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
             <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
             </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Ogresses</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Ogresses" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Undead Druids</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Undead druids" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Metal Dragons</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Metallic dragons" or task["source"] == "Adamant dragons" or task["source"] == "Rune dragons"%}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Champion Scrolls</p>
-        <table>
-          {% for task in current_team.monster_mash %}
-          {% if task["source"] == "Champion Scrolls" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+        </div>
       </div>
-    </div>
-
-
-    {% elif tile_type == 6 %}
-
-    <div class="modal-header rsText">
-      <h4>Wilderness</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Elder Chaos Druids</p>
-        <table>
-          {% for task in current_team.wilderness %}
-          {% if task["source"] == "Elder chaos druids" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Revenants</p>
-        <table>
-          {% for task in current_team.wilderness %}
-          {% if task["source"] == "Revenants" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Wilderness bosses</p>
-        <table>
-          {% for task in current_team.wilderness %}
-          {% if task["source"] == "Wilderness bosses" or task["source"] == "Venenatis/Spindel" or task["source"] == "Callisto/Artio" or task["source"] == "Vet'ion/Calvar'ion"%}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
+      {% elif tile_type == 3 %}
   
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Corporeal Beast</p>
-        <table>
-          {% for task in current_team.wilderness %}
-          {% if task["source"] == "Corporeal beast" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Wilderness Demi-bosses</p>
-        <table>
-          {% for task in current_team.wilderness %}
-          {% if task["source"] == "Crazy archeologist" or task["source"] == "Chaos fanatic" or task["source"] == "Scorpia" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-      </div>
-    </div>
-
-    {% elif tile_type == 7 %}
-
-    <div class="modal-header rsText">
-      <h4>Clues</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Beginner Clue Steps</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "Beginner clue steps" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Easy Clue Steps</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "Easy clue steps" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Medium Clue Steps</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "Medium clue steps" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Hard Clue Steps</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "Hard clue steps" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Elite Clue Steps</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "Elite clue steps" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-      </div>
-    </div>
-
-    {% elif tile_type == 8 %}
-
-    <div class="modal-header rsText">
-      <h4>God Wars Dungeon</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Godsword Blade</p>
-        <table>
-          {% for task in current_team.godwars %}
-          {% if task["source"] == "Godsword blade" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>General Graardor</p>
-        <table>
-          {% for task in current_team.godwars %}
-          {% if task["source"] == "General Graardor" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Commander Zilyana</p>
-        <table>
-          {% for task in current_team.godwars %}
-          {% if task["source"] == "Commander Zilyana" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>K'ril Tsutsarot</p>
-        <table>
-          {% for task in current_team.clues %}
-          {% if task["source"] == "K'ril Tsutsarot" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Kree'arra</p>
-        <table>
-          {% for task in current_team.godwars %}
-          {% if task["source"] == "Kree'arra" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Nex</p>
-        <table>
-          {% for task in current_team.godwars %}
-          {% if task["source"] == "Nex" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-      </div>
-    </div>
-
-    {% elif tile_type == 9 %}
-
-    <div class="modal-header rsText">
-      <h4>Various Bosses</h4>
-      <button class="btn-close"></button>
-    </div>
-    <br>
-    <div class="modal-content rsText">
-      <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
-      <div class="modal-tasks">
-        <p>Barrows Chests</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Barrows chests" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-        <p>Dagannoth kings</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Dagannoth kings" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>The Gauntlet</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "The Gauntlet" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Hespori</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Hespori" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Kalphite queen</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Kalphite queen" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Nightmare</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Nightmare" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Phantom Muspah</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Phantom Muspah" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-        <p>Sarachnis</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Sarachnis" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Vorkath</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Vorkath" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-
-
-        <p>Zulrah</p>
-        <table>
-          {% for task in current_team.various_bosses %}
-          {% if task["source"] == "Zulrah" %}
-          {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
-          {% if task["completed"] == False %}
-          
-          <tr>
-              <td>{{task["task"]}}</td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins">{{coins}}</label>
-              </td>
-              <td>
-                <form>
-                  <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
-                </form>
-              </td>
-          </tr>
-          {% else %}
-            <tr>
-              <td><del>{{task["task"]}}</del></td>
-              <td>
-                <img src="/static/event/coins.png" id="coins "alt="image of coins">
-                <label for="coins"><del>{{coins}}</del></label>
-              </td>
-              <td>
-                <button class="button-obtained disabled">Obtained</button>
-              </td>
-            </tr>
-  
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-        </table>
-        <br>
-      </div>
-    </div>
-
-    {% endif %}
-
       
+      <div class="modal-header rsText">
+        <h4>Slayer Bosses</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Grotesque Guardians</p>
+          <table>
+            {% for task in current_team.slayer_bosses %}
+            {% if task["source"] == "Grotesque Guardians" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Abyssal Sire</p>
+          <table>
+            {% for task in current_team.slayer_bosses %}
+            {% if task["source"] == "Abyssal Sire" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Kraken</p>
+          <table>
+            {% for task in current_team.slayer_bosses %}
+            {% if task["source"] == "Kraken" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Cerberus</p>
+          <table>
+            {% for task in current_team.slayer_bosses %}
+            {% if task["source"] == "Cerberus" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Thermonuclear Smoke Devil</p>
+          <table>
+            {% for task in current_team.slayer_bosses %}
+            {% if task["source"] == "Thermonuclear Smoke Devil" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+      {% elif tile_type == 4 %}
+  
+  
+      <div class="modal-header rsText">
+        <h4>Slayer Uniques</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Basilisks</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Basilisks" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Kurasks</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Kurasks" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Abyssal Demons</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Abyssal Demons" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Superiors</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Superiors" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Fossil Island Wyverns</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Fossil island wyverns" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Skeletal Wyverns</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Skeletal wyverns" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Dragons and Wyverns</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Dragons and wyverns" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Dark Beasts</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Dark beasts" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Vyrewatch</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Vyrewatch" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Mount Karuulm</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Mount Karuulm" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Alchemical Hydra</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Alchemical hydra" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Full Sets</p>
+          <table>
+            {% for task in current_team.slayer_uniques %}
+            {% if task["source"] == "Full sets" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+  
+  
+      {% elif tile_type == 5 %}
+  
+      <div class="modal-header rsText">
+        <h4>Monster Mash</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Tzhaar</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Tzhaar" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Demonic gorillas</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Demonic gorillas" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Stronghold of Security</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Stronghold of security" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Ogresses</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Ogresses" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Undead Druids</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Undead druids" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Metal Dragons</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Metallic dragons" or task["source"] == "Adamant dragons" or task["source"] == "Rune dragons"%}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Champion Scrolls</p>
+          <table>
+            {% for task in current_team.monster_mash %}
+            {% if task["source"] == "Champion Scrolls" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+  
+  
+      {% elif tile_type == 6 %}
+  
+      <div class="modal-header rsText">
+        <h4>Wilderness</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Elder Chaos Druids</p>
+          <table>
+            {% for task in current_team.wilderness %}
+            {% if task["source"] == "Elder chaos druids" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Revenants</p>
+          <table>
+            {% for task in current_team.wilderness %}
+            {% if task["source"] == "Revenants" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Wilderness bosses</p>
+          <table>
+            {% for task in current_team.wilderness %}
+            {% if task["source"] == "Wilderness bosses" or task["source"] == "Venenatis/Spindel" or task["source"] == "Callisto/Artio" or task["source"] == "Vet'ion/Calvar'ion"%}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Corporeal Beast</p>
+          <table>
+            {% for task in current_team.wilderness %}
+            {% if task["source"] == "Corporeal beast" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Wilderness Demi-bosses</p>
+          <table>
+            {% for task in current_team.wilderness %}
+            {% if task["source"] == "Crazy archeologist" or task["source"] == "Chaos fanatic" or task["source"] == "Scorpia" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+  
+      {% elif tile_type == 7 %}
+  
+      <div class="modal-header rsText">
+        <h4>Clues</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Beginner Clue Steps</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "Beginner clue steps" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Easy Clue Steps</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "Easy clue steps" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Medium Clue Steps</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "Medium clue steps" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Hard Clue Steps</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "Hard clue steps" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Elite Clue Steps</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "Elite clue steps" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+  
+      {% elif tile_type == 8 %}
+  
+      <div class="modal-header rsText">
+        <h4>God Wars Dungeon</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Godsword Blade</p>
+          <table>
+            {% for task in current_team.godwars %}
+            {% if task["source"] == "Godsword blade" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>General Graardor</p>
+          <table>
+            {% for task in current_team.godwars %}
+            {% if task["source"] == "General Graardor" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Commander Zilyana</p>
+          <table>
+            {% for task in current_team.godwars %}
+            {% if task["source"] == "Commander Zilyana" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>K'ril Tsutsarot</p>
+          <table>
+            {% for task in current_team.clues %}
+            {% if task["source"] == "K'ril Tsutsarot" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Kree'arra</p>
+          <table>
+            {% for task in current_team.godwars %}
+            {% if task["source"] == "Kree'arra" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Nex</p>
+          <table>
+            {% for task in current_team.godwars %}
+            {% if task["source"] == "Nex" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+        </div>
+      </div>
+  
+      {% elif tile_type == 9 %}
+  
+      <div class="modal-header rsText">
+        <h4>Various Bosses</h4>
+        <button class="btn-close"></button>
+      </div>
+      <br>
+      <div class="modal-content rsText">
+        <p>Ensure that you have submitted evidence of receiving the drop on Discord.</p>
+        <div class="modal-tasks">
+          <p>Barrows Chests</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Barrows chests" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+          <p>Dagannoth kings</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Dagannoth kings" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>The Gauntlet</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "The Gauntlet" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Hespori</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Hespori" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Kalphite queen</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Kalphite queen" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Nightmare</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Nightmare" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Phantom Muspah</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Phantom Muspah" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+          <p>Sarachnis</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Sarachnis" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Vorkath</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Vorkath" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+  
+  
+          <p>Zulrah</p>
+          <table>
+            {% for task in current_team.various_bosses %}
+            {% if task["source"] == "Zulrah" %}
+            {% set coins = task["coinvalue"] * current_team.coin_multiplier %}
+            {% if task["completed"] == False %}
+            
+            <tr>
+                <td>{{task["task"]}}</td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins">{{coins}}</label>
+                </td>
+                <td>
+                  <form>
+                    <button class="button-complete completeButton" type="Skilling Minigames" _id="{{task['_id']}}" coins="{{coins}}">Complete</button>
+                  </form>
+                </td>
+            </tr>
+            {% else %}
+              <tr>
+                <td><del>{{task["task"]}}</del></td>
+                <td>
+                  <img src="/static/event/coins.png" id="coins "alt="image of coins">
+                  <label for="coins"><del>{{coins}}</del></label>
+                </td>
+                <td>
+                  <button class="button-obtained disabled">Obtained</button>
+                </td>
+              </tr>
+    
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+      </div>
+  
+      {% endif %}
+  </dialog>
+</div>
 
-</dialog>
 
+<!-- nav -->
 <header class="rsText">
   <h3 class="logo">Task Party - {{current_team.name}}</h3>
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
   <nav>
       <ul>
-          <li><a href="#" class="taskButton">Tasks</a></li>
+          {% if current_team.roll_available %}
+          <li><a href="/event/roll/">Roll</a></li>
+          {% endif %}
           <li><a href="#" class="teamButton">Teams</a></li>
           <li><a href="/event/logout/">Logout</a></li>
       </ul>
@@ -2343,6 +2364,7 @@ Clan Event Board
 <br>
 <br>
 
+<!-- team list section -->
 <div class="grid-container">
     <div class="team-row">
       {% for team in teams %}
@@ -2355,6 +2377,7 @@ Clan Event Board
       </div>
     </div>
 
+<!-- game board section -->
     <div class="container" name="test3">
         <div class="board rsText">
             {% for tile  in all_tiles %}
@@ -2405,11 +2428,12 @@ Clan Event Board
             {% endfor %}
         </div>
     </div>
-
-
 </div>
 
 
+<div class="roll">
+  <h1 class="rsText" id=roll>ROLLING...</h1>
+</div>
 <script>
     $(document).ready(function() {
     var tile = "{{current_team.current_tile}}";
@@ -2420,7 +2444,25 @@ Clan Event Board
 </script>
 
 
+<script type="text/javascript">
+  const endElement1 = document.getElementById("{{teams[0]['current_tile']}}")
+  const endElement2 = document.getElementById("{{teams[1]['current_tile']}}")
+  const endElement3 = document.getElementById("{{teams[2]['current_tile']}}")
+  const endElement4 = document.getElementById("{{teams[3]['current_tile']}}")
+  const endElement5 = document.getElementById("{{teams[4]['current_tile']}}")
+  const endElement6 = document.getElementById("{{teams[5]['current_tile']}}")
+  const endElement7 = document.getElementById("{{teams[6]['current_tile']}}")
+  const endElement8 = document.getElementById("{{teams[7]['current_tile']}}")
+  const endElement9 = document.getElementById("{{teams[8]['current_tile']}}")
+  const endElement10 = document.getElementById("{{teams[9]['current_tile']}}")
+  const endElement11 = document.getElementById("{{teams[10]['current_tile']}}")
+  const endElement12 = document.getElementById("{{teams[11]['current_tile']}}")
+  const endElement13 = document.getElementById("{{teams[12]['current_tile']}}")
+  const endElement14 = document.getElementById("{{teams[13]['current_tile']}}")
+  const endElement15 = document.getElementById("{{teams[14]['current_tile']}}")
 
+  var currentTeam = '{{current_team.username}}'
+</script>
 <script src="{{ url_for('static', filename='js/clan.js') }}"></script>
 
 
