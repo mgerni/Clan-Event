@@ -61,40 +61,35 @@ def event():
         team = clan_event.Team(session['team_username'])
     else:
         team = clan_event.Team.instances[0]
-        team.neighbors = list()
-        team.travelled = list()
         team.update_attrs()
     teams = [ele for ele in teams_db.get_teams()]
     all_tiles = board.all_tiles
-    return render_template("clan_event.html", all_tiles=all_tiles, teams=teams, current_team=team)
+    # neighbors=[team.neighbors[0]['neighbor_id'], team.neighbors[1]['neighbor_id']]
+    return render_template("clan_event.html", all_tiles=all_tiles, teams=teams, current_team=team, travelled=team.travelled, neighbors=team.neighbors, roll=team.roll_value)
 
-@app.route('/event/roll/')
+@app.route('/event/roll/', methods=['POST'])
 @event_login_required
 def team_roll():
     team = clan_event.Team.instances[0]
+    team.update_attrs()
     if not team.roll_available:
         return redirect('/event/')
-    #broadcast roll message?
     roll = team.team_roll()
-    team.move_tiles(roll, team.current_tile)
-    teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
-    all_tiles = board.all_tiles
-    print('Sending travelled list from event/roll: ', team.travelled)
-    return render_template('clan_event_roll.html', all_tiles=all_tiles, current_team=team, roll=roll, travelled=team.travelled)
-
+    team.roll_value = roll
+    team.move_tiles(team.roll_value, team.current_tile)
+    if not team.neighbors:
+        teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+    data = {'travelled': team.travelled, 'neighbors': team.neighbors, 'roll': team.roll_value}
+    return data
 
 @app.route('/event/roll/choice/', methods=['POST'])
 @event_login_required
 def roll_choice():
     team = clan_event.Team.instances[0]
-    if not team.roll_available:
-        return redirect('/event/')
     all_tiles = board.all_tiles
-    tile_index = request.form['tile_index']
-    roll = request.form['roll']
-    tile = all_tiles[int(tile_index)]
-    return render_template('clan_event_roll_choice.html', all_tiles=all_tiles, tile=tile, current_team=team, roll=roll)
-
+    tile_index = int(request.form['tile_index'])
+    tile = all_tiles[tile_index]
+    return render_template('clan_event_roll_choice.html', tile=tile, roll=team.roll_value)
 
 @app.route('/event/roll/complete/', methods=['POST'])
 @event_login_required
@@ -103,22 +98,28 @@ def complete_roll():
     if not team.roll_available:
         return redirect('/event/')
     all_tiles = board.all_tiles
-    tile_index = request.form['tile_id']
-    tile_index = int(tile_index)
-    roll = request.form['roll']
-    roll = int(roll)
-    remaining_roll = roll - len(team.travelled) - 1
-    team.neighbors = list()
+    tile_index = int(request.form['tile_id'])
+    roll = int(request.form['roll'])
+    roll = roll - len(team.travelled) - 1 
     team.travelled.append(tile_index)
     if all_tiles[tile_index]['type'] == 'O':
         print('do shop things2')
-        remaining_roll += 1
-    team.move_tiles(remaining_roll, tile_index)
+        roll += 1
+    team.move_tiles(roll, tile_index)
     teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
-    print('Sending travelled list from event/roll/choice: ', team.travelled)
-    return render_template('roll_choice.html', all_tiles=all_tiles, current_team=team, roll=roll, travelled=team.travelled)
+    data = {'travelled': team.travelled, 'neighbors': team.neighbors}
+    return data
 
 
+@app.route('/event/clear/rolls/', methods=['POST'])
+@event_login_required
+def clear_rolls():
+    team = clan_event.Team.instances[0]
+    team.roll_value = 0
+    team.travelled = list()
+    team.neighbors = list()
+    data = {'success': True}
+    return data
 
 @app.route('/event/admin/login/', methods=['GET', 'POST'])
 def admin_login():

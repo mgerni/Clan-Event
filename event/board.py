@@ -214,4 +214,5 @@ all_tiles = [
 {'type': 'B', 'id': 212, 'neighbor_list': [{'neighbor_id': 211}]},
 {'type': 6, 'id': 213, 'neighbor_list': [{'neighbor_id': 212}]},
 {'type': 5, 'id': 214, 'neighbor_list': [{'neighbor_id': 213}]},
-{'type': 'S', 'id': 215, 'neighbor_list': [{'neighbor_id': 214}]}]
+{'type': 'S', 'id': 215, 'neighbor_list': [{'neighbor_id': 214}]}
+]

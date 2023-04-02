@@ -1,9 +1,9 @@
 from .board import all_tiles
 import pymongo
-from .teams_db import get_team_info, update_team
+from .teams_db import get_team_info, update_team, remove_coins_team, add_coins_team
 import random
 from .webhook import send_embed_bank_passed
-
+from .event_db import add_to_bank, get_bank_value
 
 
 MONGO_URI = 'mongodb://localhost:27017/'
@@ -46,12 +46,15 @@ class Team:
         self.__class__.instances.append(self)
         self.username = username
         self.team_info = get_team_info(self.username)
+        self.roll_value = 0
         self.neighbors = list()
         self.travelled = list()
         self.update_attrs()
 
 
     def move_tiles(self, roll: int, current_tile: int, manual_move: bool=False) -> list:
+        
+        print('move_tiles ',self.travelled)
         if len(all_tiles[current_tile]['neighbor_list']) == 2:
             self.neighbors = all_tiles[current_tile]['neighbor_list']
             return
@@ -62,6 +65,12 @@ class Team:
             
             if all_tiles[next_tile]['type'] == 'B' and roll > 1:
                 print('Pay Money to bank', roll)
+                if self.coins >= 5:
+                    bank_value = get_bank_value
+                    bank_value=['bank_coins']
+                    # add_to_bank(5)
+                    # remove_coins_team(self.username, 5)
+                    # send_embed_bank_passed(self.username, bank_value)
                 self.current_tile = next_tile
                 print(self.current_tile)
             
@@ -119,15 +128,6 @@ class Team:
     def team_roll(self) -> int:
         return random.choice(range(1, 11))
 
-
-def get_event_status() -> dict:
-    return game_coll.find_one({}, {'_id': 0,'frozen': 1})
-
-def get_banked_coins() -> dict:
-    return game_coll.find_one({}, {'_id': 0, 'bank_coins': 1})
-
-def add_banked_coins(coins: int) -> None:
-    game_coll.update_one({}, {'$set' : {'bank_coins': coins}})
 
 if __name__ == '__main__':
     team = Team("team1")

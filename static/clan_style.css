@@ -8,44 +8,45 @@ body{
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(18, 1fr);
-    grid-gap: 5px;
+    grid-gap: 10px;
     justify-content: center;
 }
 
 .grid-container { 
     display: flex;
-    justify-content: start;
+    /* flex-direction: column; */
+    /* justify-content: start; */
+    /* flex-flow: wrap; */
+    /* gap: 5%; */
 }
 
-/* @media screen and (min-width: 950px) {
-    .board {
-        grid-template-columns: repeat(18, 55px);
-
-    }
-    .team-row {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .grid-container {
-        grid-template-columns: 5% 40%;
-        grid-gap: 20em;
-    }
-} */
+.container1 {
+    /* padding: 0 5rem; */
+    display: flex;
+    flex-grow: 1;
+    /* min-width: 80%; */
+}
 
 
 .board > .card {
     aspect-ratio: 1 / 1;
     border: 1px solid red;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     align-items: center;
-    /* box-shadow: 30px 25px 25px; */
+    justify-content: center;
+    box-shadow: 0 -0px  15px 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 
 .team {
     padding-top: 3px;
     flex-grow: 1;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2px;
     row-gap: 5px;
@@ -340,6 +341,53 @@ svg {
     color: #908c60;
 }
 
+.team-1-bg-color { 
+    background-color: #7348f7 !important;
+}
+
+.team-2-bg-color { 
+    background-color: #58040f;
+}
+.team-3-bg-color { 
+    background-color: #e85254;
+}
+.team-4-bg-color { 
+    background-color: #18a78a;
+}
+.team-5-bg-color { 
+    background-color: #59c32e;
+}
+.team-6-bg-color { 
+    background-color: #949ef6;
+}
+.team-7-bg-color { 
+    background-color: #8b1674;
+}
+.team-8-bg-color { 
+    background-color:#994d06;
+}
+.team-9-bg-color { 
+    background-color: #66c9ed;
+}
+.team-10-bg-color { 
+    background-color: #bbebbf;
+}
+.team-11-bg-color { 
+    background-color: #df842d;
+}
+.team-12-bg-color { 
+    background-color: #fd19cb;
+}
+.team-13-bg-color { 
+    background-color: #1c0e32;
+}
+.team-14-bg-color { 
+    background-color: #4262a0;
+}
+.team-15-bg-color { 
+    background-color: #908c60;
+}
+
 
 .body-center {
     height: 100vh;
@@ -459,11 +507,24 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+
 }
 
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
+}
+
+nav p {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+nav p:hover {
+    cursor: pointer;
 }
 
 nav a {
@@ -475,9 +536,13 @@ nav a {
     transition: opacity 150ms ease-in-out;
 }
 
-
 .nav-toggle:checked ~ nav {
     transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav p {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
 }
 
 .nav-toggle:checked ~ nav a {
@@ -485,7 +550,47 @@ nav a {
     transition: opacity 250ms ease-in-out 250ms;
 }
 
+/* @media screen and (min-width: 1000px) {
+    .container1 {
+        padding: 0 5rem;
+    }
+} */
+
+@media screen and (min-width: 200px) {
+    .container1 {
+        padding: 0 0;
+    }
+
+    .team-icon {
+        max-width: 10%;
+    }
+    
+    .board > card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+@media screen and (min-width: 1350px) {
+    .container1 {
+        padding: 0 10rem;
+    }
+}
+@media screen and (min-width: 1650px) {
+    .container1 {
+        padding: 0 20rem;
+    }
+}
+
+
+
 @media screen and (min-width: 800px) {
+
+    .team-icon {
+        max-width: 15%;
+    }
     .nav-toggle-label {
         display: none;
     }
@@ -504,10 +609,20 @@ nav a {
         grid-column: 3 / 4;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+
 
     }
     
+    nav p {
+        opacity: 1;
+        position: relative;
+    }
+
+    .roll {
+        opacity: 1;
+        position: relative;
+    }
+
     nav a {
         opacity: 1;
         position: relative;
@@ -520,6 +635,22 @@ nav a {
     nav li {
         margin-left: 3em;
         margin-bottom: 0;
+        
+    }
+
+
+    nav p::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+        
     }
 
     nav a::before {
@@ -535,10 +666,13 @@ nav a {
         transition: transform ease-in-out 250ms;
     }
 
-    nav a:hover::before {
+    nav p:hover::before {
         transform: scale(1, 1);
     }
 
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
 }
 
 .team-container {
@@ -604,18 +738,6 @@ nav a {
     }
   }
 
-.roll {
-    display: none;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin-top: 20%;
-    animation-name: roll-animation;
-    animation-fill-mode: fowards;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    opacity: 0;
-}
 
 @keyframes roll-animation {
 
@@ -634,21 +756,22 @@ nav a {
     
 }
 
-.roll > h1 {
-    /* font-weight: 900; */
-    font-size: 5rem !important;
-}
-.roll-information {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .travel-color {
-    box-shadow: 0 -0px  10px 5px white;
+    box-shadow: 0 -0px  10px 5px white !important;
 }
 
 .travel-color-end {
     animation: shake 1.99s cubic-bezier(.36,.07,.19,.97) both;
-    box-shadow: 0 -0px  10px 5px rgb(7, 233, 37);
+    box-shadow: 0 -0px  10px 5px rgb(7, 233, 37) !important; 
+}
+
+.team-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+
+
 }

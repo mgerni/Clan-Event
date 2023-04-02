@@ -30,6 +30,14 @@ def get_teams() -> list:
 def update_team(team_name: str, update_dict: dict) -> None:
     teams_coll.update_one({"Name": team_name}, {'$set': update_dict})
 
+def remove_coins_team(team_name: str, amount: int) -> None:
+    current_coins = teams_coll.find_one({'Name': team_name}, {'_id': 0, 'coins': 1})
+    teams_coll.update_one({'Name': team_name}, {'$set' : {'coins': current_coins['coins'] - amount}})
+    
+def add_coins_team(team_name: str, amount: int) -> None:
+    current_coins = teams_coll.find_one({'Name': team_name}, {'_id': 0, 'coins': 1})
+    teams_coll.update_one({'Name': team_name}, {'$set' : {'coins': current_coins["coins"] + amount}})
 
 if __name__ == "__main__":
-    teams_coll.update_many({}, { '$set': {'shop_available': False, 'bowser_available': False, 'bank_available': False}})
+    # teams_coll.update_many({}, { '$set': {'shop_available': False, 'bowser_available': False, 'bank_available': False}})
+    pass

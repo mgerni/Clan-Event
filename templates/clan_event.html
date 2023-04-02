@@ -2348,10 +2348,13 @@ O                Shop
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
   <nav>
       <ul>
+
           {% if current_team.roll_available %}
-          <li><a href="/event/roll/">Roll</a></li>
+          <li><p class="roll">Roll</p></li>
           {% endif %}
-          <li><a href="#" class="teamButton">Teams</a></li>
+          <li><p class="open-button">Task</p></li>
+          <li><p>Teams</p></li>
+
           <li><a href="/event/logout/">Logout</a></li>
       </ul>
   </nav>
@@ -2379,50 +2382,128 @@ O                Shop
 
 <!-- game board section -->
     <div class="container" name="test3">
-        <div class="board rsText">
+        <div class="board">
             {% for tile  in all_tiles %}
     
             {% if tile["type"] == "E" %}
             <div></div>
     
             {% elif tile["type"] == 1 %}
-            <div class="card minigame-tile" name="Skilling Minigames" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card minigame-tile" name="Skilling Minigames" id="{{tile['id']}}">
+              {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 2 %}
-            <div class="card raids-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card raids-tile" id="{{tile['id']}}">
+              {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 3 %}
-            <div class="card slayer-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card slayer-boss-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 4 %}
-            <div class="card slayer-monsters-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card slayer-monsters-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 5 %}
-            <div class="card monster-mash-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card monster-mash-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 6 %}
-            <div class="card wilderness-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card wilderness-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 7 %}
-            <div class="card clues-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card clues-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 8 %}
-            <div class="card godwars-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card godwars-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == 9 %}
-            <div class="card misc-boss-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card misc-boss-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == "B" %}
-            <div class="card bank-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card bank-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == "X" %}
-            <div class="card bowser-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card bowser-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == "S" %}
-            <div class="card start-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card start-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% elif tile["type"]  == "O" %}
-            <div class="card shop-tile" id="{{tile['id']}}">{{tile['id']}}</div>
+            <div class="card shop-tile" id="{{tile['id']}}">
+                            {% for team in teams %}
+              {% if team.current_tile == tile['id'] %}
+              <div class="team-icon team-{{loop.index}}-color team-{{loop.index}}-bg-color"></div>
+              {% endif %}
+              {% endfor %}
+            </div>
     
             {% endif %}
             {% endfor %}
@@ -2431,9 +2512,18 @@ O                Shop
 </div>
 
 
-<div class="roll">
-  <h1 class="rsText" id=roll>ROLLING...</h1>
+<dialog class="myModal" id="choice-modal">
+  <div class="modal-header rsText">
+    <h4>Choose this tile?</h4>
+    <button class="btn-close close-choice-menu" id="close-choice"></button>
 </div>
+  <div id="choice">
+
+  </div>
+
+
+</dialog>
+
 <script>
     $(document).ready(function() {
     var tile = "{{current_team.current_tile}}";
@@ -2445,6 +2535,11 @@ O                Shop
 
 
 <script type="text/javascript">
+  var neighbors = {{neighbors|tojson}};
+  var travelled = {{travelled}};
+  var roll = {{roll}};
+  
+
   const endElement1 = document.getElementById("{{teams[0]['current_tile']}}")
   const endElement2 = document.getElementById("{{teams[1]['current_tile']}}")
   const endElement3 = document.getElementById("{{teams[2]['current_tile']}}")
@@ -2462,6 +2557,8 @@ O                Shop
   const endElement15 = document.getElementById("{{teams[14]['current_tile']}}")
 
   var currentTeam = '{{current_team.username}}'
+  var current_tile = '{{current_team.current_tile}}'
+
 </script>
 <script src="{{ url_for('static', filename='js/clan.js') }}"></script>
 

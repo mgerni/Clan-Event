@@ -16,3 +16,6 @@ def send_embed_bank_passed(team: str, bank_coins: int) -> None:
         color='F2C105'
     )
     embed.set_thumbnail(url='https://oldschool.runescape.wiki/images/Coins_1000.png?978c8')
+    embed.add_embed_field(name='Bank Value', value=f'{bank_coins}')
+    webhook.add_embed(embed)
+    response = webhook.execute()
