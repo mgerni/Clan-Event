@@ -2,8 +2,8 @@ from .board import all_tiles
 import pymongo
 from .teams_db import get_team_info, update_team, remove_coins_team, add_coins_team
 import random
-from .webhook import send_embed_bank_passed
-from .event_db import add_to_bank, get_bank_value
+from .webhook import send_embed_bank
+from .event_db import add_to_bank, get_bank_value, remove_coins_bank
 
 
 MONGO_URI = 'mongodb://localhost:27017/'
@@ -12,7 +12,7 @@ db_client = pymongo.MongoClient(MONGO_URI)
 
 db = db_client['ClanEvent']
 master_coll = db['MASTER']
-game_coll = db['EVENT']
+
 
 '''
 Team Class:
@@ -52,7 +52,7 @@ class Team:
         self.update_attrs()
 
 
-    def move_tiles(self, roll: int, current_tile: int, manual_move: bool=False) -> list:
+    def move_tiles(self, roll: int, current_tile: int) -> None:
         
         print('move_tiles ',self.travelled)
         if len(all_tiles[current_tile]['neighbor_list']) == 2:
@@ -64,19 +64,32 @@ class Team:
             next_tile = all_tiles[current_tile]['neighbor_list'][0]['neighbor_id']
             
             if all_tiles[next_tile]['type'] == 'B' and roll > 1:
-                print('Pay Money to bank', roll)
                 if self.coins >= 5:
-                    bank_value = get_bank_value
-                    bank_value=['bank_coins']
-                    # add_to_bank(5)
-                    # remove_coins_team(self.username, 5)
-                    # send_embed_bank_passed(self.username, bank_value)
+                    add_to_bank(5)
+                    remove_coins_team(self.username, 5)
+                    bank_value = get_bank_value()
+                    send_embed_bank(self.username, # Title team_name
+                                           'Passed Bank Tile!',  # Title message
+                                           '5 coins were deposited to the bank!' # Description 
+                                           'F2C105', # Color 
+                                           'Bank Value', # Field name
+                                           bank_value['bank_coins'] # Bank value
+                                           )
                 self.current_tile = next_tile
-                print(self.current_tile)
             
             elif all_tiles[next_tile]['type'] == 'B':
-                print('Get money from bank', roll)
-            
+                bank_value = get_bank_value()
+                add_coins_team(bank_value['bank_coins'])
+                remove_coins_bank()
+                send_embed_bank(self.username, # Title team_name
+                                       'Landed on Bank Tile!', # Title message
+                                       f'{self.username} recevied {bank_value["bank_coins"]} coins', # Description
+                                       'F2C105', # Color 
+                                       'Bank Value', # Field name
+                                       bank_value['bank_coins'] # Bank value
+                                       )
+                
+
             elif all_tiles[next_tile]['type'] == 'X' and roll == 1:
                 print('Do bowser things')
                 self.current_tile = next_tile
@@ -122,8 +135,6 @@ class Team:
         self.bowser_available = self.team_info['bowser_available']
         self.members = self.team_info['members']
 
-    def update_db(self, team_id: int) -> None:
-        print('DO THE THING TO UPDATE THE DATABASE FOR THE TEAM')
 
     def team_roll(self) -> int:
         return random.choice(range(1, 11))

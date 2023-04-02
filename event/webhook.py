@@ -8,14 +8,14 @@ def send_message(message: str) -> None:
     response = webhook.execute()
 
 
-def send_embed_bank_passed(team: str, bank_coins: int) -> None:
+def send_embed_bank(team: str, message: str, description: str, color: str, field_name: str, bank_coins: int) -> None:
     webhook = DiscordWebhook(url=URL)
     embed = DiscordEmbed(
-        title= f'{team} passed bank tile!',
-        description= "5 coins were deposited to the bank!",
-        color='F2C105'
+        title= f'{team} {message}',
+        description= description,
+        color=color
     )
     embed.set_thumbnail(url='https://oldschool.runescape.wiki/images/Coins_1000.png?978c8')
-    embed.add_embed_field(name='Bank Value', value=f'{bank_coins}')
+    embed.add_embed_field(name=field_name, value=bank_coins)
     webhook.add_embed(embed)
     response = webhook.execute()

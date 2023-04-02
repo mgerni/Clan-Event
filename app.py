@@ -64,7 +64,6 @@ def event():
         team.update_attrs()
     teams = [ele for ele in teams_db.get_teams()]
     all_tiles = board.all_tiles
-    # neighbors=[team.neighbors[0]['neighbor_id'], team.neighbors[1]['neighbor_id']]
     return render_template("clan_event.html", all_tiles=all_tiles, teams=teams, current_team=team, travelled=team.travelled, neighbors=team.neighbors, roll=team.roll_value)
 
 @app.route('/event/roll/', methods=['POST'])
@@ -77,8 +76,12 @@ def team_roll():
     roll = team.team_roll()
     team.roll_value = roll
     team.move_tiles(team.roll_value, team.current_tile)
+    all_tiles = board.all_tiles
     if not team.neighbors:
-        teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+        if all_tiles[team.current_tile]['type'] == 'B' or all_tiles[team.current_tile]['type'] == 'X':
+            teams_db.update_team(team.username, {"current_tile": team.current_tile})
+        else:
+            teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
     data = {'travelled': team.travelled, 'neighbors': team.neighbors, 'roll': team.roll_value}
     return data
 
@@ -90,6 +93,7 @@ def roll_choice():
     tile_index = int(request.form['tile_index'])
     tile = all_tiles[tile_index]
     return render_template('clan_event_roll_choice.html', tile=tile, roll=team.roll_value)
+
 
 @app.route('/event/roll/complete/', methods=['POST'])
 @event_login_required
@@ -105,8 +109,14 @@ def complete_roll():
     if all_tiles[tile_index]['type'] == 'O':
         print('do shop things2')
         roll += 1
+        
     team.move_tiles(roll, tile_index)
-    teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+    
+    if all_tiles[team.current_tile]['type'] == 'B' or all_tiles[team.current_tile]['type'] == 'X':
+        teams_db.update_team(team.username, {"current_tile": team.current_tile})
+    else:
+        teams_db.update_team(team.username, {"current_tile": team.current_tile, 'roll_available': False})
+        
     data = {'travelled': team.travelled, 'neighbors': team.neighbors}
     return data
 
@@ -121,6 +131,7 @@ def clear_rolls():
     data = {'success': True}
     return data
 
+
 @app.route('/event/admin/login/', methods=['GET', 'POST'])
 def admin_login():
     if request.method == 'POST':
@@ -131,6 +142,7 @@ def admin_login():
             session["admin_username"] = username
             return redirect("/event/admin/")
     return render_template('clan_event_admin_login.html')
+
 
 @app.route('/event/logout/')
 @event_login_required
@@ -186,14 +198,6 @@ def task_complete():
     print(request.form['name'])
     return redirect('/event/')
 
-@app.route('/event/message/', methods=['POST'])
-@event_login_required
-def discord_message():
-    team = clan_event.Team.instances[0]
-    delay = request.form['delay']
-    sleep(int(delay))
-    # webhook.send_message(f"{team.username.capitalize()} {request.form['message']}")
-    return 'just testing'
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
